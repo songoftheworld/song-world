@@ -47,18 +47,20 @@ h1 {
 
 .subtitle {
     font-size: 1.3rem;
-    color: #a0b0d0;
+    color: #FFD700;
     font-style: italic;
     margin-bottom: 18px;
     letter-spacing: 2px;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
 }
 
 .description {
     max-width: 750px;
     margin: 0 auto 22px;
     line-height: 1.8;
-    color: #b0c0e0;
+    color: #FFD700;
     font-size: 1.05rem;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
 }
 
 .links {
@@ -100,7 +102,7 @@ h1 {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 215, 0, 0.4);
     border-radius: 30px;
-    color: #fff;
+    color: #FFD700;
     font-size: 1.05rem;
     outline: none;
     transition: all 0.3s ease;
@@ -161,7 +163,7 @@ main {
 }
 
 .lang-grid a:hover {
-    color: #ffffff;
+    color: #FFD700;
 }
 
 .lang-grid a::after {
@@ -175,16 +177,17 @@ main {
 
 .lang-grid a:hover::after {
     opacity: 1;
-    color: #ffffff;
+    color: #FFD700;
     transform: translateX(5px);
 }
 
 footer {
     text-align: center;
     padding: 30px;
-    color: #7080a0;
+    color: #FFD700;
     font-size: 0.9rem;
     border-top: 1px solid rgba(255, 215, 0, 0.1);
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
 }
 
 @media (max-width: 1000px) {
