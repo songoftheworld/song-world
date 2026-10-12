@@ -5,7 +5,8 @@
 }
 
 body {
-    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 50%, #ffeaa7 100%);
+    background-attachment: fixed;
     color: #2c2c2c;
     font-family: 'Georgia', serif;
     min-height: 100vh;
@@ -20,21 +21,21 @@ header, main, .search-box, footer {
 
 header {
     text-align: center;
-    padding: 60px 20px 30px;
+    padding: 20px 20px 30px;
 }
 
 h1 {
     font-size: 3rem;
     letter-spacing: 8px;
-    color: #b8860b;
-    text-shadow: 0 2px 10px rgba(184, 134, 11, 0.2);
+    color: #6b4c1f;
+    text-shadow: 0 2px 15px rgba(255, 255, 255, 0.8), 0 4px 20px rgba(107, 76, 31, 0.2);
     margin-bottom: 10px;
     font-weight: normal;
 }
 
 .subtitle {
     font-size: 1.2rem;
-    color: #666;
+    color: #5a4a3a;
     font-style: italic;
     margin-bottom: 25px;
     letter-spacing: 2px;
@@ -44,7 +45,7 @@ h1 {
     max-width: 700px;
     margin: 0 auto 30px;
     line-height: 1.8;
-    color: #555;
+    color: #4a3a2a;
     font-size: 1rem;
 }
 
@@ -57,20 +58,24 @@ h1 {
 }
 
 .links a {
-    color: #b8860b;
+    color: #6b4c1f;
     text-decoration: none;
-    border: 1px solid #b8860b;
+    border: 2px solid rgba(255, 255, 255, 0.8);
     padding: 10px 20px;
     border-radius: 25px;
     transition: all 0.3s ease;
     font-size: 0.95rem;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .links a:hover {
-    background: #b8860b;
+    background: #6b4c1f;
     color: #fff;
-    box-shadow: 0 4px 15px rgba(184, 134, 11, 0.3);
+    border-color: #6b4c1f;
+    box-shadow: 0 6px 20px rgba(107, 76, 31, 0.3);
+    transform: translateY(-2px);
 }
 
 .search-box {
@@ -82,23 +87,25 @@ h1 {
     width: 80%;
     max-width: 500px;
     padding: 15px 25px;
-    background: #fff;
-    border: 1px solid #d4af37;
+    background: rgba(255, 255, 255, 0.85);
+    border: 2px solid rgba(255, 255, 255, 0.9);
     border-radius: 30px;
     color: #2c2c2c;
     font-size: 1rem;
     outline: none;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(10px);
 }
 
 #search:focus {
-    border-color: #b8860b;
-    box-shadow: 0 4px 20px rgba(184, 134, 11, 0.2);
+    border-color: #6b4c1f;
+    box-shadow: 0 6px 25px rgba(107, 76, 31, 0.2);
+    background: #fff;
 }
 
 #search::placeholder {
-    color: #aaa;
+    color: #999;
 }
 
 main {
@@ -115,23 +122,24 @@ main {
 }
 
 .lang-grid li {
-    background: #fff;
-    border: 1px solid #e8e8e8;
-    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
     padding: 15px 20px;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    backdrop-filter: blur(10px);
 }
 
 .lang-grid li:hover {
-    background: #fffdf5;
+    background: #fff;
     border-color: #d4af37;
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(184, 134, 11, 0.15);
+    box-shadow: 0 8px 25px rgba(107, 76, 31, 0.2);
 }
 
 .lang-grid a {
-    color: #333;
+    color: #3a3a3a;
     text-decoration: none;
     display: flex;
     justify-content: space-between;
@@ -140,28 +148,30 @@ main {
 }
 
 .lang-grid a:hover {
-    color: #b8860b;
+    color: #6b4c1f;
 }
 
 .lang-grid a::after {
     content: "→";
     color: #d4af37;
-    opacity: 0.5;
+    opacity: 0.6;
     transition: all 0.3s ease;
 }
 
 .lang-grid a:hover::after {
     opacity: 1;
     transform: translateX(5px);
+    color: #6b4c1f;
 }
 
 footer {
     text-align: center;
     padding: 30px;
-    color: #999;
+    color: #6b4c1f;
     font-size: 0.85rem;
-    border-top: 1px solid #e8e8e8;
-    background: rgba(255, 255, 255, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
 }
 
 @media (max-width: 600px) {
