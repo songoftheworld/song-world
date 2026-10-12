@@ -153,6 +153,10 @@ const languages = [
     { name: "Японский язык", url: "https://vk.cc/cZQHel" }
 ];
 
+// ===== АВТОСОРТИРОВКА =====
+// Сортируем по алфавиту (русский) при загрузке
+languages.sort((a, b) => a.name.localeCompare(b.name, 'ru'));
+
 function renderLanguages(filter = "") {
     const list = document.getElementById("lang-list");
     list.innerHTML = "";
