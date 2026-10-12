@@ -59,8 +59,19 @@ h1 {
     margin: 0 auto 22px;
     line-height: 1.8;
     color: #FFD700;
-    font-size: 1.05rem;
     text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+}
+
+.desc-main {
+    font-size: 1.25rem;
+    font-weight: normal;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.desc-sub {
+    font-size: 1.05rem;
+    opacity: 0.9;
 }
 
 .links {
@@ -159,7 +170,6 @@ main {
     align-items: center;
     font-size: 0.95rem;
     width: 100%;
-    transition: color 0.3s ease;
 }
 
 .lang-grid a:hover {
@@ -177,7 +187,6 @@ main {
 
 .lang-grid a:hover::after {
     opacity: 1;
-    color: #FFD700;
     transform: translateX(5px);
 }
 
