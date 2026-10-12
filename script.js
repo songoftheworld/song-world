@@ -180,3 +180,44 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+// ===== ЗВЁЗДЫ =====
+const canvas = document.getElementById('stars');
+if (canvas) {
+    const ctx = canvas.getContext('2d');
+    let stars = [];
+    let width, height;
+
+    function resize() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+        stars = [];
+        const count = Math.floor(width * height / 8000);
+        for (let i = 0; i < count; i++) {
+            stars.push({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                r: Math.random() * 1.5 + 0.3,
+                alpha: Math.random(),
+                speed: Math.random() * 0.02 + 0.005
+            });
+        }
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, width, height);
+        stars.forEach(s => {
+            s.alpha += s.speed;
+            if (s.alpha > 1 || s.alpha < 0.1) s.speed *= -1;
+            ctx.beginPath();
+            ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(255, 255, 255, ${s.alpha})`;
+            ctx.fill();
+        });
+        requestAnimationFrame(draw);
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+    draw();
+}
