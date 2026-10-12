@@ -5,7 +5,7 @@
 }
 
 body {
-    background: #0a1628;
+    background: #061224;
     color: #e0e0e0;
     font-family: 'Georgia', serif;
     min-height: 100vh;
@@ -29,7 +29,7 @@ header, main, .search-box, footer {
 
 header {
     text-align: center;
-    padding: 5px 20px 15px;
+    padding: 30px 20px 20px;
 }
 
 h1 {
@@ -83,7 +83,7 @@ h1 {
 
 .links a:hover {
     background: #FFD700;
-    color: #0a1628;
+    color: #061224;
     box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
     transform: translateY(-2px);
 }
@@ -150,17 +150,18 @@ main {
 }
 
 .lang-grid a {
-    color: #c0d0e8;
+    color: #FFD700;
     text-decoration: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 0.95rem;
     width: 100%;
+    transition: color 0.3s ease;
 }
 
 .lang-grid a:hover {
-    color: #FFD700;
+    color: #ffffff;
 }
 
 .lang-grid a::after {
@@ -174,6 +175,7 @@ main {
 
 .lang-grid a:hover::after {
     opacity: 1;
+    color: #ffffff;
     transform: translateX(5px);
 }
 
