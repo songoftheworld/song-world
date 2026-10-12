@@ -59,19 +59,8 @@ h1 {
     margin: 0 auto 22px;
     line-height: 1.8;
     color: #FFD700;
-    text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
-}
-
-.desc-main {
-    font-size: 1.25rem;
-    font-weight: normal;
-    display: inline-block;
-    margin-bottom: 8px;
-}
-
-.desc-sub {
     font-size: 1.05rem;
-    opacity: 0.9;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
 }
 
 .links {
