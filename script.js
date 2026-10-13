@@ -150,6 +150,7 @@ const languages = [
     { name: "Эсперанто язык", url: "https://vk.cc/cZQIql" },
     { name: "Яванския язык", url: "https://vk.cc/d2dwJV" },
     { name: "Якутский язык", url: "https://vk.cc/d0TdQO" },
+    { name: "Сицилийский язык", url: "https://vk.ru/wall-237994889_845" },
     { name: "Японский язык", url: "https://vk.cc/cZQHel" }
 ];
 
