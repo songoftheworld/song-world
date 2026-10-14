@@ -175,10 +175,20 @@ function renderLanguages(filter = "") {
             list.appendChild(li);
         });
 
-    // Обновляем счётчик
+    // Умное склонение слова "язык"
     const counter = document.getElementById("lang-count");
     if (counter) {
-        counter.textContent = languages.length;
+        const n = languages.length;
+        const lastDigit = n % 10;
+        const lastTwo = n % 100;
+        let word = "языков";
+
+        if (lastTwo < 11 || lastTwo > 14) {
+            if (lastDigit === 1) word = "язык";
+            else if (lastDigit >= 2 && lastDigit <= 4) word = "языка";
+        }
+
+        counter.textContent = `${n} ${word}`;
     }
 }
 
