@@ -246,3 +246,22 @@ footer {
         0 0 8px rgba(255, 215, 0, 0.8),
         0 0 15px rgba(255, 215, 0, 0.5);
 }
+.pinterest-widget {
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 30px;
+}
+
+.pinterest-widget h2 {
+    font-size: 1.8rem;
+    color: #FFD700;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+}
+@media (max-width: 600px) {
+    .pinterest-widget h2 {
+        font-size: 1.4rem;
+        letter-spacing: 2px;
+    }
+}
