@@ -174,6 +174,12 @@ function renderLanguages(filter = "") {
             li.appendChild(a);
             list.appendChild(li);
         });
+
+    // Обновляем счётчик
+    const counter = document.getElementById("lang-count");
+    if (counter) {
+        counter.textContent = languages.length;
+    }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
