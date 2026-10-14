@@ -230,3 +230,19 @@ footer {
         font-size: 0.9rem;
     }
 }
+.lang-counter {
+    font-size: 1.15rem;
+    color: #FFD700;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.4);
+}
+
+.lang-counter span {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #fff;
+    text-shadow: 
+        0 0 8px rgba(255, 215, 0, 0.8),
+        0 0 15px rgba(255, 215, 0, 0.5);
+}
