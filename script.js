@@ -153,6 +153,7 @@ const languages = [
     { name: "Сицилийский язык", url: "https://vk.ru/wall-237994889_845" },
     { name: "Каталанский язык", url: "https://vk.ru/wall-237994889_848" },
     { name: "Токипона язык", url: "https://vk.ru/wall-237994889_855" },
+    { name: "Гренландский язык", url: "https://vk.ru/wall-237994889_860" },
     { name: "Японский язык", url: "https://vk.cc/cZQHel" }
 ];
 
