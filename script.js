@@ -156,6 +156,7 @@ const languages = [
     { name: "Гренландский язык", url: "https://vk.ru/wall-237994889_860" },
     { name: "Акан язык", url: "https://vk.ru/wall-237994889_863" },
     { name: "Афарский язык", url: "https://vk.ru/wall-237994889_867" },
+    { name: "Волоф язык", url: "https://vk.ru/wall-237994889_871" },
     { name: "Японский язык", url: "https://vk.cc/cZQHel" }
 ];
 
