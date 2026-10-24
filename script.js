@@ -161,6 +161,7 @@ const languages = [
     { name: "Кантонский язык", url: "https://vk.ru/wall-237994889_881" },
     { name: "Гаитянский креольский язык", url: "https://vk.ru/wall-237994889_885" },
     { name: "Бислама язык", url: "https://vk.ru/wall-237994889_889" },
+    { name: "Чви язык", url: "https://vk.ru/wall-237994889_894" },
     { name: "Японский язык", url: "https://vk.cc/cZQHel" }
 ];
 
