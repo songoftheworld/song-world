@@ -163,6 +163,7 @@ const languages = [
     { name: "Бислама язык", url: "https://vk.ru/wall-237994889_889" },
     { name: "Чви язык", url: "https://vk.ru/wall-237994889_894" },
     { name: "Рутульский язык", url: "https://vk.ru/wall-237994889_898" },
+    { name: "Йолнгу язык", url: "https://vk.ru/wall-237994889_902" },
     { name: "Японский язык", url: "https://vk.cc/cZQHel" }
 ];
 
