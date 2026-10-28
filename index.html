@@ -9,20 +9,26 @@
 <body>
     <canvas id="stars"></canvas>
 
+    <!-- Переключатель языков -->
+    <div class="lang-switch" style="position: absolute; top: 20px; right: 20px; z-index: 10; display: flex; gap: 10px;">
+        <button id="btn-ru" onclick="switchLanguage('ru')" style="background: none; border: 1px solid #FFD700; color: #FFD700; padding: 5px 12px; border-radius: 5px; cursor: pointer; font-family: 'Georgia', serif; font-weight: bold;">RU</button>
+        <button id="btn-en" onclick="switchLanguage('en')" style="background: none; border: 1px solid #FFD700; color: #FFD700; padding: 5px 12px; border-radius: 5px; cursor: pointer; font-family: 'Georgia', serif; font-weight: bold;">EN</button>
+    </div>
+
     <header>
         <h1>ЗОЛОТАЯ КНИГА</h1>
         <p class="subtitle">«Песня Мира» — Алексей Роньжин. Авторский проект.</p>
-        <p class="lang-counter">📖 В книге: <span id="lang-count">0</span></p>
+        <p class="lang-counter">?? В книге: <span id="lang-count">0</span></p>
         <p class="description">
             Одна песня звучит на всех языках мира.<br>
-            Каждая ссылка ведёт на пост vk с текстом, переводом и аудио.<br>
-            Слушай. Чувствуй. Рождается наш общий свет. 🏝️🌅🌙🎶
+            Каждая ссылка ведёт на пост с текстом, переводом и аудио.<br>
+            Слушай. Чувствуй. Рождается наш общий свет. ?????????
         </p>
         <div class="links">
-            <a href="https://song-world.ru/public/pesnya-mira" target="_blank">🎧 Радио</a>
-            <a href="https://vk.ru/playlist_neuromusic" target="_blank">💬 ВКонтакте</a>
-            <a href="https://www.youtube.com/@Alexey_Ronzhin" target="_blank">▶️ YouTube</a>
-            <a href="https://t.me/world_song_project" target="_blank">✈️ Telegram</a>
+            <a href="https://song-world.ru/public/pesnya-mira" target="_blank">?? Радио</a>
+            <a href="https://vk.ru/playlist_neuromusic" target="_blank">?? ВКонтакте</a>
+            <a href="https://www.youtube.com/@Alexey_Ronzhin" target="_blank">?? YouTube</a>
+            <a href="https://t.me/world_song_project" target="_blank">?? Telegram</a>
         </div>
     </header>
 
@@ -34,9 +40,9 @@
         <ul id="lang-list" class="lang-grid"></ul>
     </main>
 
-        <!-- Виджет Pinterest (доска) -->
+    <!-- Виджет Pinterest (доска) -->
     <div class="pinterest-widget">
-        <h2>📌 Наш Pinterest</h2>
+        <h2>?? Наш Pinterest</h2>
         <a
           data-pin-do="embedBoard"
           data-pin-board-width="900"
@@ -50,12 +56,11 @@
         <p>© Алексей Роньжин. «Песня Мира».</p>
     </footer>
 
-    <!-- Скрипт Pinterest (один раз на странице) -->
+    <!-- Скрипт Pinterest -->
     <script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script>
 
-   <!-- GoatCounter -->
-    <script data-goatcounter="https://song-world.goatcounter.com/count"
-     async src="//gc.zgo.at/count.js"></script>
+    <!-- GoatCounter -->
+    <script data-goatcounter="https://song-world.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
     <script src="script.js"></script>
 </body>
