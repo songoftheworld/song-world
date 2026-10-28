@@ -169,45 +169,139 @@ const languages = [
     { name: "Японский язык", url: "https://vk.cc/cZQHel" }
 ];
 
+// ===== СЛОВАРИ ПЕРЕВОДОВ =====
+const translations = {
+    ru: {
+        title: "ЗОЛОТАЯ КНИГА",
+        subtitle: "«Песня Мира» — Алексей Роньжин. Авторский проект.",
+        desc1: "Одна песня звучит на всех языках мира.",
+        desc2: "Каждая ссылка ведёт на пост с текстом, переводом и аудио.",
+        desc3: "Слушай. Чувствуй. Рождается наш общий свет.",
+        btnRadio: "📻 Радио",
+        btnVk: "🎵 ВКонтакте",
+        btnYt: "▶️ YouTube",
+        btnTg: "✈️ Telegram",
+        searchPlaceholder: "Поиск по языку...",
+        pinTitle: "📌 Наш Pinterest",
+        footer: "© Алексей Роньжин. «Песня Мира».",
+        countText: (n) => {
+            const lastDigit = n % 10;
+            const lastTwo = n % 100;
+            let word = "языков";
+            if (lastTwo < 11 || lastTwo > 14) {
+                if (lastDigit === 1) word = "язык";
+                else if (lastDigit >= 2 && lastDigit <= 4) word = "языка";
+            }
+            return `В книге: ${n} ${word}`;
+        }
+    },
+    en: {
+        title: "THE GOLDEN BOOK",
+        subtitle: "«Song of the World» — Alexey Ronzhin. Original project.",
+        desc1: "One song sounds in all languages of the world.",
+        desc2: "Each link leads to a post with lyrics, translation and audio.",
+        desc3: "Listen. Feel. Our shared light is born.",
+        btnRadio: "📻 Radio",
+        btnVk: "🎵 VK",
+        btnYt: "▶️ YouTube",
+        btnTg: "✈️ Telegram",
+        searchPlaceholder: "Search by language...",
+        pinTitle: "📌 Our Pinterest",
+        footer: "© Alexey Ronzhin. «Song of the World».",
+        countText: (n) => `In the book: ${n} languages`
+    }
+};
+
+let currentLang = localStorage.getItem('siteLang') || 'ru';
+
+// ===== ФУНКЦИЯ ПЕРЕВОДА НАЗВАНИЙ ЯЗЫКОВ =====
+// Автоматически отрезает "язык" и склонения, если нет nameEn
+function getLangName(lang) {
+    if (currentLang === 'ru') return lang.name;
+    if (lang.nameEn) return lang.nameEn; // Если указали вручную
+    
+    // Автоматическая очистка для английского
+    let name = lang.name;
+    name = name.replace(/ язык/i, '').replace(/ \(РЕЛИЗ\)/i, '');
+    name = name.replace(/ шотландия/i, ' (Scotland)');
+    name = name.replace(/ \(Америка\)/i, ' (America)');
+    name = name.replace(/ \(Мокшанский\)/i, ' (Moksha)');
+    name = name.replace(/ \(Эрзянский\)/i, ' (Erzya)');
+    name = name.replace(/ \(РЕЛИЗ «Свет Мира»\)/i, ' (Release «Light of the World»)');
+    return name;
+}
+
 // ===== АВТОСОРТИРОВКА =====
-// Сортируем по алфавиту (русский) при загрузке
-languages.sort((a, b) => a.name.localeCompare(b.name, 'ru'));
+languages.sort((a, b) => getLangName(a).localeCompare(getLangName(b), currentLang === 'ru' ? 'ru' : 'en'));
+
+// ===== ПЕРЕКЛЮЧЕНИЕ ЯЗЫКА =====
+function switchLanguage(langCode) {
+    currentLang = langCode;
+    localStorage.setItem('siteLang', langCode);
+    
+    const t = translations[langCode];
+    
+    // Обновляем интерфейс
+    document.querySelector('h1').textContent = t.title;
+    document.querySelector('.subtitle').textContent = t.subtitle;
+    
+    const descParagraphs = document.querySelectorAll('.description');
+    if (descParagraphs.length >= 3) {
+        descParagraphs[0].innerHTML = t.desc1 + '<br>' + t.desc2 + '<br>' + t.desc3;
+    } else if (descParagraphs.length > 0) {
+        descParagraphs[0].innerHTML = t.desc1 + '<br>' + t.desc2 + '<br>' + t.desc3;
+    }
+
+    const links = document.querySelectorAll('.links a');
+    if (links.length >= 4) {
+        links[0].textContent = t.btnRadio;
+        links[1].textContent = t.btnVk;
+        links[2].textContent = t.btnYt;
+        links[3].textContent = t.btnTg;
+    }
+
+    document.getElementById('search').placeholder = t.searchPlaceholder;
+    
+    const pinHeader = document.querySelector('.pinterest-widget h2');
+    if (pinHeader) pinHeader.textContent = t.pinTitle;
+    
+    document.querySelector('footer p').innerHTML = `<p>${t.footer}</p>`;
+    
+    // Обновляем кнопки RU/EN
+    document.getElementById('btn-ru').style.opacity = langCode === 'ru' ? '1' : '0.5';
+    document.getElementById('btn-en').style.opacity = langCode === 'en' ? '1' : '0.5';
+    
+    // Пересортировываем и перерисовываем
+    languages.sort((a, b) => getLangName(a).localeCompare(getLangName(b), langCode === 'ru' ? 'ru' : 'en'));
+    renderLanguages(document.getElementById('search').value);
+}
 
 function renderLanguages(filter = "") {
     const list = document.getElementById("lang-list");
     list.innerHTML = "";
     const lowerFilter = filter.toLowerCase();
+    
     languages
-        .filter(lang => lang.name.toLowerCase().includes(lowerFilter))
+        .filter(lang => getLangName(lang).toLowerCase().includes(lowerFilter))
         .forEach(lang => {
             const li = document.createElement("li");
             const a = document.createElement("a");
             a.href = lang.url;
             a.target = "_blank";
-            a.textContent = lang.name;
+            a.textContent = getLangName(lang);
             li.appendChild(a);
             list.appendChild(li);
         });
 
-    // Умное склонение слова "язык"
     const counter = document.getElementById("lang-count");
     if (counter) {
-        const n = languages.length;
-        const lastDigit = n % 10;
-        const lastTwo = n % 100;
-        let word = "языков";
-
-        if (lastTwo < 11 || lastTwo > 14) {
-            if (lastDigit === 1) word = "язык";
-            else if (lastDigit >= 2 && lastDigit <= 4) word = "языка";
-        }
-
-        counter.textContent = `${n} ${word}`;
+        counter.textContent = translations[currentLang].countText(languages.length);
     }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    renderLanguages();
+    // Инициализация языка
+    switchLanguage(currentLang);
 
     const searchInput = document.getElementById("search");
     if (searchInput) {
@@ -217,7 +311,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// ===== ЗВЁЗДЫ =====
+// ===== ЗВЁЗДЫ (без изменений) =====
 const canvas = document.getElementById('stars');
 if (canvas) {
     const ctx = canvas.getContext('2d');
