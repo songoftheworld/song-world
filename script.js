@@ -178,12 +178,12 @@ const englishNames = {
     "Баскский": "Basque", "Башкирский": "Bashkir", "Белорусский": "Belarusian", "Бенгальский": "Bengali",
     "Бирманский": "Burmese", "Болгарский": "Bulgarian", "Боснийский": "Bosnian", "Бразилия-Португальский": "Brazilian Portuguese",
     "Бретонский": "Breton", "Бурятский": "Buryat", "Валлийский": "Welsh", "Венгерский": "Hungarian",
-    "Вепсский": "Veps", "Вьетнамский": "Vietnamese", "Гавайский (РЕЛИЗ)": "Hawaiian (Release)", "Галисийский": "Galician",
+    "Вепсский": "Veps", "Вьетнамский": "Vietnamese", "Гавайский": "Hawaiian", "Галисийский": "Galician",
     "Греческий": "Greek", "Грузинский": "Georgian", "Гуарани": "Guarani", "Гуджарати": "Gujarati",
     "Даргинский": "Dargwa", "Датский": "Danish", "Дия": "Diya", "Долганский": "Dolgan",
     "Древнеармянский": "Old Armenian", "Зулусский": "Zulu", "Иврит": "Hebrew", "Ингушский": "Ingush",
     "Индонезийский": "Indonesian", "Ирландский": "Irish", "Исландский": "Icelandic", "Испанский": "Spanish",
-    "Итальянский": "Italian", "Ительменский (РЕЛИЗ)": "Itelmen (Release)", "Ишанский": "Ishan", "Йоруба": "Yoruba",
+    "Итальянский": "Italian", "Ительменский": "Itelmen", "Ишанский": "Ishan", "Йоруба": "Yoruba",
     "Кабардино-черкесский": "Kabardian", "Казахский": "Kazakh", "Калмыцкий": "Kalmyk", "Карачаево-балкарский": "Karachay-Balkar",
     "Карельский": "Karelian", "Кечуа": "Quechua", "Кетский": "Ket", "Китайский": "Chinese",
     "Коми-Зырянский": "Komi-Zyrian", "Корейский": "Korean", "Корнский": "Cornish", "Корсиканский": "Corsican",
@@ -197,23 +197,22 @@ const englishNames = {
     "Непальский": "Nepali", "Нивхский": "Nivkh", "Ногайский": "Nogai", "Норвежский": "Norwegian",
     "Окситанский": "Occitan", "Оромо": "Oromo", "Осетинский": "Ossetian", "Панджаби": "Punjabi",
     "Персидский": "Persian", "Польский": "Polish", "Португальский": "Portuguese", "Пушту": "Pashto",
-    "Румынский": "Romanian", "Русский": "Russian", "Русский (РЕЛИЗ «Свет Мира»)": "Russian (Release «Light of the World»)",
-    "Санскрит": "Sanskrit", "Сардинский": "Sardinian", "Сингальский": "Sinhala", "Суахили": "Swahili",
-    "Сунданский": "Sundanese", "Тагальский": "Tagalog", "Таджикский": "Tajik", "Таино": "Taino",
-    "Тайский": "Thai", "Тамильский": "Tamil", "Татарский": "Tatar", "Тауширо": "Taushiro",
-    "Телугу": "Telugu", "Тибетский": "Tibetan", "Тонганский": "Tongan", "Тофаларский": "Tofalar",
-    "Тувинский": "Tuvan", "Тунисский": "Tunisian", "Туркменский": "Turkmen", "Турецкий": "Turkish",
-    "Удмуртский": "Udmurt", "Удэгейский": "Udege", "Узбекский": "Uzbek", "Урартский": "Urartian",
-    "Урду": "Urdu", "Фиджи": "Fijian", "Финский": "Finnish", "Французский": "French",
-    "Фризский": "Frisian", "Хакасский": "Khakas", "Хауса": "Hausa", "Хинди": "Hindi",
-    "Цыганский": "Romani", "Чероки": "Cherokee", "Чеченский": "Chechen", "Чешский": "Czech",
-    "Чувашский": "Chuvash", "Чукотский": "Chukchi", "Шведский": "Swedish", "Швейцарский": "Swiss German",
-    "Шорский": "Shor", "Шотландский": "Scottish Gaelic", "Эсперанто": "Esperanto", "Яванския": "Javanese",
-    "Якутский": "Yakut", "Сицилийский": "Sicilian", "Каталанский": "Catalan", "Токипона": "Toki Pona",
-    "Гренландский": "Greenlandic", "Акан": "Akan", "Афарский": "Afar", "Волоф": "Wolof",
-    "Гэльский шотландия": "Scottish Gaelic", "Кантонский": "Cantonese", "Гаитянский креольский": "Haitian Creole",
-    "Бислама": "Bislama", "Чви": "Twi", "Рутульский": "Rutul", "Йолнгу": "Yolngu",
-    "Лингала": "Lingala", "Каннада": "Kannada", "Японский": "Japanese"
+    "Румынский": "Romanian", "Русский": "Russian", "Санскрит": "Sanskrit", "Сардинский": "Sardinian",
+    "Сингальский": "Sinhala", "Суахили": "Swahili", "Сунданский": "Sundanese", "Тагальский": "Tagalog",
+    "Таджикский": "Tajik", "Таино": "Taino", "Тайский": "Thai", "Тамильский": "Tamil",
+    "Татарский": "Tatar", "Тауширо": "Taushiro", "Телугу": "Telugu", "Тибетский": "Tibetan",
+    "Тонганский": "Tongan", "Тофаларский": "Tofalar", "Тувинский": "Tuvan", "Тунисский": "Tunisian",
+    "Туркменский": "Turkmen", "Турецкий": "Turkish", "Удмуртский": "Udmurt", "Удэгейский": "Udege",
+    "Узбекский": "Uzbek", "Урартский": "Urartian", "Урду": "Urdu", "Фиджи": "Fijian",
+    "Финский": "Finnish", "Французский": "French", "Фризский": "Frisian", "Хакасский": "Khakas",
+    "Хауса": "Hausa", "Хинди": "Hindi", "Цыганский": "Romani", "Чероки": "Cherokee",
+    "Чеченский": "Chechen", "Чешский": "Czech", "Чувашский": "Chuvash", "Чукотский": "Chukchi",
+    "Шведский": "Swedish", "Швейцарский": "Swiss German", "Шорский": "Shor", "Шотландский": "Scottish Gaelic",
+    "Эсперанто": "Esperanto", "Яванския": "Javanese", "Якутский": "Yakut", "Сицилийский": "Sicilian",
+    "Каталанский": "Catalan", "Токипона": "Toki Pona", "Гренландский": "Greenlandic", "Акан": "Akan",
+    "Афарский": "Afar", "Волоф": "Wolof", "Гэльский шотландия": "Scottish Gaelic", "Кантонский": "Cantonese",
+    "Гаитянский креольский": "Haitian Creole", "Бислама": "Bislama", "Чви": "Twi", "Рутульский": "Rutul",
+    "Йолнгу": "Yolngu", "Лингала": "Lingala", "Каннада": "Kannada", "Японский": "Japanese"
 };
 
 // ===== СЛОВАРИ ПЕРЕВОДОВ ИНТЕРФЕЙСА =====
@@ -265,29 +264,23 @@ let currentLang = localStorage.getItem('siteLang') || 'ru';
 function getLangName(lang) {
     if (currentLang === 'ru') return lang.name;
     
-    // Если в объекте есть nameEn - используем его
     if (lang.nameEn) return lang.nameEn;
 
-    // Ищем в словаре: берем название без слова "язык" и пробуем найти
     let cleanName = lang.name.replace(/ язык/i, '').trim();
-    // Убираем (РЕЛИЗ) для поиска в словаре
     let searchName = cleanName.replace(/ \(РЕЛИЗ\)/i, '').trim();
     
-    // Особые случаи
     if (cleanName.includes("Мордовский (Мокшанский)")) return "Mordovian (Moksha)";
     if (cleanName.includes("Мордовский (Эрзянский)")) return "Mordovian (Erzya)";
     if (cleanName.includes("Русский (РЕЛИЗ")) return "Russian (Release)";
 
-    // Ищем в словаре
     if (englishNames[searchName]) {
-        // Если это (РЕЛИЗ), добавляем пометку
         if (lang.name.includes("РЕЛИЗ")) {
             return englishNames[searchName] + " (Release)";
         }
         return englishNames[searchName];
     }
     
-    return cleanName; // Если не нашли, возвращаем без слова "язык"
+    return cleanName; 
 }
 
 // ===== АВТОСОРТИРОВКА =====
@@ -300,7 +293,6 @@ function switchLanguage(langCode) {
     
     const t = translations[langCode];
     
-    // Обновляем интерфейс
     document.querySelector('h1').textContent = t.title;
     document.querySelector('.subtitle').textContent = t.subtitle;
     
@@ -322,19 +314,22 @@ function switchLanguage(langCode) {
     const pinHeader = document.querySelector('.pinterest-widget h2');
     if (pinHeader) pinHeader.textContent = t.pinTitle;
     
-    document.querySelector('footer p').innerHTML = `<p>${t.footer}</p>`;
+    const footerP = document.querySelector('footer p');
+    if (footerP) footerP.innerHTML = t.footer;
     
-    // Обновляем кнопки RU/EN
-    document.getElementById('btn-ru').style.opacity = langCode === 'ru' ? '1' : '0.4';
-    document.getElementById('btn-en').style.opacity = langCode === 'en' ? '1' : '0.4';
+    const btnRu = document.getElementById('btn-ru');
+    const btnEn = document.getElementById('btn-en');
+    if (btnRu) btnRu.style.opacity = langCode === 'ru' ? '1' : '0.4';
+    if (btnEn) btnEn.style.opacity = langCode === 'en' ? '1' : '0.4';
     
-    // Пересортировываем и перерисовываем
     languages.sort((a, b) => getLangName(a).localeCompare(getLangName(b), langCode === 'ru' ? 'ru' : 'en'));
     renderLanguages(document.getElementById('search').value);
 }
 
 function renderLanguages(filter = "") {
     const list = document.getElementById("lang-list");
+    if (!list) return;
+    
     list.innerHTML = "";
     const lowerFilter = filter.toLowerCase();
     
@@ -382,4 +377,28 @@ if (canvas) {
         for (let i = 0; i < count; i++) {
             stars.push({
                 x: Math.random() * width,
-                y: Math.random()
+                y: Math.random() * height,
+                r: Math.random() * 1.5 + 0.3,
+                alpha: Math.random(),
+                speed: Math.random() * 0.02 + 0.005
+            });
+        }
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, width, height);
+        stars.forEach(s => {
+            s.alpha += s.speed;
+            if (s.alpha > 1 || s.alpha < 0.1) s.speed *= -1;
+            ctx.beginPath();
+            ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(255, 255, 255, ${s.alpha})`;
+            ctx.fill();
+        });
+        requestAnimationFrame(draw);
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+    draw();
+}
