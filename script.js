@@ -169,7 +169,54 @@ const languages = [
     { name: "Японский язык", url: "https://vk.cc/cZQHel" }
 ];
 
-// ===== СЛОВАРИ ПЕРЕВОДОВ =====
+// Словарь английских названий
+const englishNames = {
+    "Абхазский": "Abkhazian", "Аварский": "Avar", "Авестийский": "Avestan", "Австрийский": "Austrian",
+    "Адыгейский": "Adyghe", "Азербайджанский": "Azerbaijani", "Аймара": "Aymara", "Айнский": "Ainu",
+    "Албанский": "Albanian", "Алтайский": "Altai", "Амхарский": "Amharic", "Английский (Америка)": "English (America)",
+    "Арабский": "Arabic", "Аранта": "Arrernte", "Армянский": "Armenian", "Африкаанс": "Afrikaans",
+    "Баскский": "Basque", "Башкирский": "Bashkir", "Белорусский": "Belarusian", "Бенгальский": "Bengali",
+    "Бирманский": "Burmese", "Болгарский": "Bulgarian", "Боснийский": "Bosnian", "Бразилия-Португальский": "Brazilian Portuguese",
+    "Бретонский": "Breton", "Бурятский": "Buryat", "Валлийский": "Welsh", "Венгерский": "Hungarian",
+    "Вепсский": "Veps", "Вьетнамский": "Vietnamese", "Гавайский (РЕЛИЗ)": "Hawaiian (Release)", "Галисийский": "Galician",
+    "Греческий": "Greek", "Грузинский": "Georgian", "Гуарани": "Guarani", "Гуджарати": "Gujarati",
+    "Даргинский": "Dargwa", "Датский": "Danish", "Дия": "Diya", "Долганский": "Dolgan",
+    "Древнеармянский": "Old Armenian", "Зулусский": "Zulu", "Иврит": "Hebrew", "Ингушский": "Ingush",
+    "Индонезийский": "Indonesian", "Ирландский": "Irish", "Исландский": "Icelandic", "Испанский": "Spanish",
+    "Итальянский": "Italian", "Ительменский (РЕЛИЗ)": "Itelmen (Release)", "Ишанский": "Ishan", "Йоруба": "Yoruba",
+    "Кабардино-черкесский": "Kabardian", "Казахский": "Kazakh", "Калмыцкий": "Kalmyk", "Карачаево-балкарский": "Karachay-Balkar",
+    "Карельский": "Karelian", "Кечуа": "Quechua", "Кетский": "Ket", "Китайский": "Chinese",
+    "Коми-Зырянский": "Komi-Zyrian", "Корейский": "Korean", "Корнский": "Cornish", "Корсиканский": "Corsican",
+    "Косо": "Xhosa", "Крымскотатарский": "Crimean Tatar", "Куба-Испанский": "Cuban Spanish", "Кумыкский": "Kumyk",
+    "Кунвиньку": "Kunwinjku", "Кхмерский": "Khmer", "Латинский": "Latin", "Латышский": "Latvian",
+    "Лезгинский": "Lezgian", "Литовский": "Lithuanian", "Луо": "Luo", "Люксембургский": "Luxembourgish",
+    "Малайский": "Malay", "Малаяламский": "Malayalam", "Мальтийский": "Maltese", "Маори": "Maori",
+    "Мапуче": "Mapuche", "Маратхи": "Marathi", "Марийский": "Mari", "Масайский": "Maasai",
+    "Молдавский": "Moldavian", "Монгольский": "Mongolian", "Мордовский (Мокшанский)": "Mordovian (Moksha)",
+    "Мордовский (Эрзянский)": "Mordovian (Erzya)", "Навахо": "Navajo", "Нанайский": "Nanai", "Немецкий": "German",
+    "Непальский": "Nepali", "Нивхский": "Nivkh", "Ногайский": "Nogai", "Норвежский": "Norwegian",
+    "Окситанский": "Occitan", "Оромо": "Oromo", "Осетинский": "Ossetian", "Панджаби": "Punjabi",
+    "Персидский": "Persian", "Польский": "Polish", "Португальский": "Portuguese", "Пушту": "Pashto",
+    "Румынский": "Romanian", "Русский": "Russian", "Русский (РЕЛИЗ «Свет Мира»)": "Russian (Release «Light of the World»)",
+    "Санскрит": "Sanskrit", "Сардинский": "Sardinian", "Сингальский": "Sinhala", "Суахили": "Swahili",
+    "Сунданский": "Sundanese", "Тагальский": "Tagalog", "Таджикский": "Tajik", "Таино": "Taino",
+    "Тайский": "Thai", "Тамильский": "Tamil", "Татарский": "Tatar", "Тауширо": "Taushiro",
+    "Телугу": "Telugu", "Тибетский": "Tibetan", "Тонганский": "Tongan", "Тофаларский": "Tofalar",
+    "Тувинский": "Tuvan", "Тунисский": "Tunisian", "Туркменский": "Turkmen", "Турецкий": "Turkish",
+    "Удмуртский": "Udmurt", "Удэгейский": "Udege", "Узбекский": "Uzbek", "Урартский": "Urartian",
+    "Урду": "Urdu", "Фиджи": "Fijian", "Финский": "Finnish", "Французский": "French",
+    "Фризский": "Frisian", "Хакасский": "Khakas", "Хауса": "Hausa", "Хинди": "Hindi",
+    "Цыганский": "Romani", "Чероки": "Cherokee", "Чеченский": "Chechen", "Чешский": "Czech",
+    "Чувашский": "Chuvash", "Чукотский": "Chukchi", "Шведский": "Swedish", "Швейцарский": "Swiss German",
+    "Шорский": "Shor", "Шотландский": "Scottish Gaelic", "Эсперанто": "Esperanto", "Яванския": "Javanese",
+    "Якутский": "Yakut", "Сицилийский": "Sicilian", "Каталанский": "Catalan", "Токипона": "Toki Pona",
+    "Гренландский": "Greenlandic", "Акан": "Akan", "Афарский": "Afar", "Волоф": "Wolof",
+    "Гэльский шотландия": "Scottish Gaelic", "Кантонский": "Cantonese", "Гаитянский креольский": "Haitian Creole",
+    "Бислама": "Bislama", "Чви": "Twi", "Рутульский": "Rutul", "Йолнгу": "Yolngu",
+    "Лингала": "Lingala", "Каннада": "Kannada", "Японский": "Japanese"
+};
+
+// ===== СЛОВАРИ ПЕРЕВОДОВ ИНТЕРФЕЙСА =====
 const translations = {
     ru: {
         title: "ЗОЛОТАЯ КНИГА",
@@ -214,21 +261,33 @@ const translations = {
 
 let currentLang = localStorage.getItem('siteLang') || 'ru';
 
-// ===== ФУНКЦИЯ ПЕРЕВОДА НАЗВАНИЙ ЯЗЫКОВ =====
-// Автоматически отрезает "язык" и склонения, если нет nameEn
+// ===== ПОЛУЧЕНИЕ ИМЕНИ ЯЗЫКА =====
 function getLangName(lang) {
     if (currentLang === 'ru') return lang.name;
-    if (lang.nameEn) return lang.nameEn; // Если указали вручную
     
-    // Автоматическая очистка для английского
-    let name = lang.name;
-    name = name.replace(/ язык/i, '').replace(/ \(РЕЛИЗ\)/i, '');
-    name = name.replace(/ шотландия/i, ' (Scotland)');
-    name = name.replace(/ \(Америка\)/i, ' (America)');
-    name = name.replace(/ \(Мокшанский\)/i, ' (Moksha)');
-    name = name.replace(/ \(Эрзянский\)/i, ' (Erzya)');
-    name = name.replace(/ \(РЕЛИЗ «Свет Мира»\)/i, ' (Release «Light of the World»)');
-    return name;
+    // Если в объекте есть nameEn - используем его
+    if (lang.nameEn) return lang.nameEn;
+
+    // Ищем в словаре: берем название без слова "язык" и пробуем найти
+    let cleanName = lang.name.replace(/ язык/i, '').trim();
+    // Убираем (РЕЛИЗ) для поиска в словаре
+    let searchName = cleanName.replace(/ \(РЕЛИЗ\)/i, '').trim();
+    
+    // Особые случаи
+    if (cleanName.includes("Мордовский (Мокшанский)")) return "Mordovian (Moksha)";
+    if (cleanName.includes("Мордовский (Эрзянский)")) return "Mordovian (Erzya)";
+    if (cleanName.includes("Русский (РЕЛИЗ")) return "Russian (Release)";
+
+    // Ищем в словаре
+    if (englishNames[searchName]) {
+        // Если это (РЕЛИЗ), добавляем пометку
+        if (lang.name.includes("РЕЛИЗ")) {
+            return englishNames[searchName] + " (Release)";
+        }
+        return englishNames[searchName];
+    }
+    
+    return cleanName; // Если не нашли, возвращаем без слова "язык"
 }
 
 // ===== АВТОСОРТИРОВКА =====
@@ -245,11 +304,9 @@ function switchLanguage(langCode) {
     document.querySelector('h1').textContent = t.title;
     document.querySelector('.subtitle').textContent = t.subtitle;
     
-    const descParagraphs = document.querySelectorAll('.description');
-    if (descParagraphs.length >= 3) {
-        descParagraphs[0].innerHTML = t.desc1 + '<br>' + t.desc2 + '<br>' + t.desc3;
-    } else if (descParagraphs.length > 0) {
-        descParagraphs[0].innerHTML = t.desc1 + '<br>' + t.desc2 + '<br>' + t.desc3;
+    const desc = document.querySelector('.description');
+    if (desc) {
+        desc.innerHTML = t.desc1 + '<br>' + t.desc2 + '<br>' + t.desc3;
     }
 
     const links = document.querySelectorAll('.links a');
@@ -268,8 +325,8 @@ function switchLanguage(langCode) {
     document.querySelector('footer p').innerHTML = `<p>${t.footer}</p>`;
     
     // Обновляем кнопки RU/EN
-    document.getElementById('btn-ru').style.opacity = langCode === 'ru' ? '1' : '0.5';
-    document.getElementById('btn-en').style.opacity = langCode === 'en' ? '1' : '0.5';
+    document.getElementById('btn-ru').style.opacity = langCode === 'ru' ? '1' : '0.4';
+    document.getElementById('btn-en').style.opacity = langCode === 'en' ? '1' : '0.4';
     
     // Пересортировываем и перерисовываем
     languages.sort((a, b) => getLangName(a).localeCompare(getLangName(b), langCode === 'ru' ? 'ru' : 'en'));
@@ -300,7 +357,6 @@ function renderLanguages(filter = "") {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Инициализация языка
     switchLanguage(currentLang);
 
     const searchInput = document.getElementById("search");
@@ -311,7 +367,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// ===== ЗВЁЗДЫ (без изменений) =====
+// ===== ЗВЁЗДЫ =====
 const canvas = document.getElementById('stars');
 if (canvas) {
     const ctx = canvas.getContext('2d');
@@ -326,28 +382,4 @@ if (canvas) {
         for (let i = 0; i < count; i++) {
             stars.push({
                 x: Math.random() * width,
-                y: Math.random() * height,
-                r: Math.random() * 1.5 + 0.3,
-                alpha: Math.random(),
-                speed: Math.random() * 0.02 + 0.005
-            });
-        }
-    }
-
-    function draw() {
-        ctx.clearRect(0, 0, width, height);
-        stars.forEach(s => {
-            s.alpha += s.speed;
-            if (s.alpha > 1 || s.alpha < 0.1) s.speed *= -1;
-            ctx.beginPath();
-            ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(255, 255, 255, ${s.alpha})`;
-            ctx.fill();
-        });
-        requestAnimationFrame(draw);
-    }
-
-    window.addEventListener('resize', resize);
-    resize();
-    draw();
-}
+                y: Math.random()
