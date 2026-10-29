@@ -166,6 +166,7 @@ const languages = [
     { name: "Йолнгу язык", url: "https://vk.ru/wall-237994889_902" },
     { name: "Лингала язык", url: "https://vk.ru/wall-237994889_906" },
     { name: "Каннада язык", url: "https://vk.ru/wall-237994889_910" },
+    { name: "Киргизский язык", url: "https://vk.ru/wall-237994889_916" },
     { name: "Японский язык", url: "https://vk.cc/cZQHel" }
 ];
 
