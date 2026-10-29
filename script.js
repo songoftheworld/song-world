@@ -213,7 +213,7 @@ const englishNames = {
     "Каталанский": "Catalan", "Токипона": "Toki Pona", "Гренландский": "Greenlandic", "Акан": "Akan",
     "Афарский": "Afar", "Волоф": "Wolof", "Гэльский шотландия": "Scottish Gaelic", "Кантонский": "Cantonese",
     "Гаитянский креольский": "Haitian Creole", "Бислама": "Bislama", "Чви": "Twi", "Рутульский": "Rutul",
-    "Йолнгу": "Yolngu", "Лингала": "Lingala", "Каннада": "Kannada", "Японский": "Japanese"
+    "Йолнгу": "Yolngu", "Лингала": "Lingala", "Каннада": "Kannada", "Японский": "Japanese", "Киргизский": "Kyrgyz"
 };
 
 // ===== СЛОВАРИ ПЕРЕВОДОВ ИНТЕРФЕЙСА =====
