@@ -58,7 +58,7 @@ const languages = [
     { name: "Карельский язык", nameEn: "Karelian", url: "https://vk.cc/d0cBUl" },
     { name: "Кечуа язык", nameEn: "Quechua", url: "https://vk.cc/cZQIxf" },
     { name: "Кетский язык", nameEn: "Ket", url: "https://vk.cc/cZQR0K" },
-    { name: "Киргизский язык", nameEn: "Kyrgyz", url: "https://vk.cc/СЮДА_ВСТАВЬ_ССЫЛКУ" },
+    { name: "Киргизский язык", nameEn: "Kyrgyz", url: "https://vk.ru/wall-237994889_916" },
     { name: "Китайский язык", nameEn: "Chinese", url: "https://vk.cc/cZQCPC" },
     { name: "Коми-Зырянский язык", nameEn: "Komi-Zyrian", url: "https://vk.cc/d1C182" },
     { name: "Корейский язык", nameEn: "Korean", url: "https://vk.cc/cZQHBC" },
