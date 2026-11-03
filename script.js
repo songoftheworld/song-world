@@ -171,6 +171,7 @@ const languages = [
     { name: "Курдский язык", nameEn: "Kurdish", url: "https://vk.ru/wall-237994889_926" },
     { name: "Белуджский язык", nameEn: "Balochi", url: "https://vk.ru/wall-237994889_931" },
     { name: "Хокло язык (Тайвань)", nameEn: "Hokkien (Taiwan)", url: "https://vk.ru/wall-237994889_934" },
+    { name: "Луганда язык (Уганда)", nameEn: "Luganda (Uganda)", url: "https://vk.ru/wall-237994889_938" },
     { name: "Японский язык", nameEn: "Japanese", url: "https://vk.cc/cZQHel" }
 ];
 
