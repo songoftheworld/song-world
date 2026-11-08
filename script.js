@@ -175,6 +175,7 @@ const languages = [
     { name: "Дари (Фарси Афгани)", nameEn: "Dari (Afghan Persian)", url: "https://vk.ru/wall-237994889_942" },
     { name: "Ассирийский язык (Ассирия)", nameEn: "Assyrian (Assyria)", url: "https://vk.ru/wall-237994889_947" },
     { name: "Шона язык (Зимбабве)", nameEn: "Shona (Zimbabwe)", url: "https://vk.ru/wall-237994889_952" },
+    { name: "Фарерский язык (Фарерские острова)", nameEn: "Faroese (Faroe Islands)", url: "https://vk.ru/wall-237994889_956" },
     { name: "Японский язык", nameEn: "Japanese", url: "https://vk.cc/cZQHel" }
 ];
 
