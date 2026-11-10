@@ -113,10 +113,16 @@ function renderAlbums(filter = "") {
             subtitle.className = "album-subtitle";
             subtitle.textContent = currentLang === 'ru' ? album.albumName : album.albumNameEn;
             
-            // Собираем карточку (без кнопки PLAY)
+            // Надпись PLAY (просто текст внутри ссылки)
+            const playText = document.createElement("div");
+            playText.className = "play-text";
+            playText.textContent = "▶ PLAY";
+            
+            // Собираем карточку
             cardLink.appendChild(img);
             cardLink.appendChild(title);
             cardLink.appendChild(subtitle);
+            cardLink.appendChild(playText); // Добавляем надпись
             
             // Создаём li и кладём туда ссылку
             const li = document.createElement("li");
