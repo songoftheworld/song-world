@@ -81,10 +81,10 @@ h1 {
 }
 
 .links a:hover {
-    background: #50C878;
+    background: #FFD700; /* Возвращаем золотой цвет */
     color: #061224;
-    border-color: #50C878;
-    box-shadow: 0 0 20px rgba(80, 200, 120, 0.6);
+    border-color: #FFD700;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6); /* Золотое свечение */
     transform: translateY(-2px);
 }
 
