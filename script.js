@@ -202,16 +202,12 @@ const translations = {
         btnRadio: "📻 Радио", btnVk: "🎵 ВКонтакте", btnYt: "▶️ YouTube", btnTg: "✈️ Telegram",
         searchPlaceholder: "Поиск по языку...",
         pinterestTitle: "Pinterest",
-        footer: "© Алексей Роньжин. «Песня Мира».",
+        footer: "© Алексей Роньжин", // Убрали «Песня Мира»
         countText: (n) => `В книге: ${n} языков`,
         
         emeraldTitle: "ИЗУМРУДНАЯ КНИГА",
         emeraldSubtitle: "«Музыка Мира» — Алексей Роньжин. Инструментальный проект.",
-        emeraldDesc1: "Музыка, которая не нуждается в переводе.",
-        emeraldDesc2: "Целые альбомы, созданные для вдохновения и путешествий.",
-        emeraldDesc3: "Слушай. Чувствуй. Рождается наш общий свет.",
-        emeraldOpen: "Открыть Изумрудную Книгу →",
-        albumCountText: (n) => `Альбомов: ${n}`
+        emeraldOpen: "Открыть Изумрудную Книгу →"
     },
     en: {
         title: "THE GOLDEN BOOK",
@@ -222,60 +218,59 @@ const translations = {
         btnRadio: "📻 Radio", btnVk: "🎵 VK", btnYt: "▶️ YouTube", btnTg: "✈️ Telegram",
         searchPlaceholder: "Search by language...",
         pinterestTitle: "Pinterest",
-        footer: "© Alexey Ronzhin. «Song of the World».",
+        footer: "© Alexey Ronzhin", // Убрали «Song of the World»
         countText: (n) => `In the book: ${n} languages`,
         
         emeraldTitle: "THE EMERALD BOOK",
         emeraldSubtitle: "«Music of the World» — Alexey Ronzhin. Instrumental project.",
-        emeraldDesc1: "Music that needs no translation.",
-        emeraldDesc2: "Full albums created for inspiration and travel.",
-        emeraldDesc3: "Listen. Feel. Our shared light is born.",
-        emeraldOpen: "Open the Emerald Book →",
-        albumCountText: (n) => `Albums: ${n}`
+        emeraldOpen: "Open the Emerald Book →"
     }
 };
 
-let currentLang = localStorage.getItem('siteLang') || 'ru';
+// ===== ЯЗЫК ПО УМОЛЧАНИЮ (АНГЛИЙСКИЙ) =====
+let currentLang = localStorage.getItem('siteLang') || 'en'; // <-- Изменили на 'en'
 
 function switchLanguage(langCode) {
     currentLang = langCode;
     localStorage.setItem('siteLang', langCode);
     const t = translations[langCode];
     
-    // Золотая книга
     document.querySelector('header h1').textContent = t.title;
     document.querySelector('header .subtitle').textContent = t.subtitle;
-    document.querySelector('header .description').innerHTML = t.desc1 + '<br>' + t.desc2 + '<br>' + t.desc3;
+    const desc = document.querySelector('.description');
+    if (desc) desc.innerHTML = t.desc1 + '<br>' + t.desc2 + '<br>' + t.desc3;
     
-    const links = document.querySelectorAll('header .links a');
+    const links = document.querySelectorAll('.links a');
     if (links.length >= 4) {
         links[0].textContent = t.btnRadio; links[1].textContent = t.btnVk;
         links[2].textContent = t.btnYt; links[3].textContent = t.btnTg;
     }
     
     document.getElementById('search').placeholder = t.searchPlaceholder;
-    document.getElementById('pinterest-title').textContent = t.pinterestTitle;
+    const pinTitle = document.getElementById('pinterest-title');
+    if (pinTitle) pinTitle.textContent = t.pinterestTitle;
     
-    // Изумрудная книга
-    document.getElementById('emerald-title').textContent = t.emeraldTitle;
-    document.getElementById('emerald-subtitle').textContent = t.emeraldSubtitle;
-    document.getElementById('emerald-desc').innerHTML = t.emeraldDesc1 + '<br>' + t.emeraldDesc2 + '<br>' + t.emeraldDesc3;
+    // ПОДВАЛ
+    const footerP = document.querySelector('footer p');
+    if (footerP) footerP.textContent = t.footer;
     
-    const emeraldLinks = document.querySelectorAll('.emerald-links a');
-    if (emeraldLinks.length >= 4) {
-        emeraldLinks[0].textContent = t.btnRadio; emeraldLinks[1].textContent = t.btnVk;
-        emeraldLinks[2].textContent = t.btnYt; emeraldLinks[3].textContent = t.btnTg;
+    const emeraldTitle = document.getElementById('emerald-title');
+    const emeraldSubtitle = document.getElementById('emerald-subtitle');
+    const emeraldBtn = document.getElementById('emerald-btn');
+    if (emeraldTitle) emeraldTitle.textContent = t.emeraldTitle;
+    if (emeraldSubtitle) emeraldSubtitle.textContent = t.emeraldSubtitle;
+    if (emeraldBtn) {
+        emeraldBtn.textContent = t.emeraldOpen;
+        emeraldBtn.href = `https://songoftheworld.github.io/song-world/emerald-book/?lang=${langCode}`;
     }
-
-    document.getElementById('emerald-btn').textContent = t.emeraldOpen;
-    document.getElementById('emerald-btn').href = `https://songoftheworld.github.io/song-world/emerald-book/?lang=${langCode}`;
     
     renderLanguages(document.getElementById('search').value);
     renderAlbums(document.getElementById('search').value);
     
-    // Кнопки RU/EN
-    document.getElementById('btn-ru').style.opacity = langCode === 'ru' ? '1' : '0.4';
-    document.getElementById('btn-en').style.opacity = langCode === 'en' ? '1' : '0.4';
+    const btnRu = document.getElementById('btn-ru');
+    const btnEn = document.getElementById('btn-en');
+    if (btnRu) btnRu.style.opacity = langCode === 'ru' ? '1' : '0.4';
+    if (btnEn) btnEn.style.opacity = langCode === 'en' ? '1' : '0.4';
 }
 
 function renderLanguages(filter = "") {
@@ -296,7 +291,8 @@ function renderLanguages(filter = "") {
             list.appendChild(li);
         });
 
-    document.getElementById("lang-count").textContent = translations[currentLang].countText(languages.length);
+    const counter = document.getElementById("lang-count");
+    if (counter) counter.textContent = translations[currentLang].countText(languages.length);
 }
 
 function renderAlbums(filter = "") {
@@ -318,6 +314,7 @@ function renderAlbums(filter = "") {
             
             const img = document.createElement("img");
             img.src = album.cover;
+            img.alt = currentLang === 'ru' ? album.name : album.nameEn;
             img.className = "album-cover";
             
             const title = document.createElement("h3");
@@ -340,15 +337,21 @@ function renderAlbums(filter = "") {
             list.appendChild(li);
         });
         
-    document.getElementById("album-count").textContent = translations[currentLang].albumCountText(albums.length);
+    const albumCounter = document.getElementById("album-count");
+    if (albumCounter) {
+        albumCounter.textContent = currentLang === 'ru' ? `Альбомов: ${albums.length}` : `Albums: ${albums.length}`;
+    }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
     switchLanguage(currentLang);
-    document.getElementById("search").addEventListener("input", (e) => {
-        renderLanguages(e.target.value);
-        renderAlbums(e.target.value);
-    });
+    const searchInput = document.getElementById("search");
+    if (searchInput) {
+        searchInput.addEventListener("input", (e) => {
+            renderLanguages(e.target.value);
+            renderAlbums(e.target.value);
+        });
+    }
 });
 
 // ===== ЗВЁЗДЫ =====
