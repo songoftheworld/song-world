@@ -272,3 +272,19 @@ footer {
         0 0 8px rgba(80, 200, 120, 0.8),
         0 0 15px rgba(80, 200, 120, 0.5);
 }
+
+/* Принудительно убираем скругления внутри карточек альбомов */
+.album-item,
+.album-link,
+.album-cover {
+    border-radius: 0 !important;
+}
+
+/* Если картинка всё равно обрезается, принудительно задаём ей размеры */
+.album-cover {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+    object-fit: fill !important; /* fill заставит картинку заполнить квадрат целиком */
+    display: block !important;
+}
