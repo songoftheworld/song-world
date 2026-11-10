@@ -202,7 +202,7 @@ const translations = {
         btnRadio: "📻 Радио", btnVk: "🎵 ВКонтакте", btnYt: "▶️ YouTube", btnTg: "✈️ Telegram",
         searchPlaceholder: "Поиск по языку...",
         pinterestTitle: "Pinterest",
-        footer: "© Алексей Роньжин", // Убрали «Песня Мира»
+        footer: "© Алексей Роньжин",
         countText: (n) => `В книге: ${n} языков`,
         
         emeraldTitle: "ИЗУМРУДНАЯ КНИГА",
@@ -218,7 +218,7 @@ const translations = {
         btnRadio: "📻 Radio", btnVk: "🎵 VK", btnYt: "▶️ YouTube", btnTg: "✈️ Telegram",
         searchPlaceholder: "Search by language...",
         pinterestTitle: "Pinterest",
-        footer: "© Alexey Ronzhin", // Убрали «Song of the World»
+        footer: "© Alexey Ronzhin",
         countText: (n) => `In the book: ${n} languages`,
         
         emeraldTitle: "THE EMERALD BOOK",
@@ -227,8 +227,7 @@ const translations = {
     }
 };
 
-// ===== ЯЗЫК ПО УМОЛЧАНИЮ (АНГЛИЙСКИЙ) =====
-let currentLang = localStorage.getItem('siteLang') || 'en'; // <-- Изменили на 'en'
+let currentLang = localStorage.getItem('siteLang') || 'en';
 
 function switchLanguage(langCode) {
     currentLang = langCode;
@@ -250,7 +249,6 @@ function switchLanguage(langCode) {
     const pinTitle = document.getElementById('pinterest-title');
     if (pinTitle) pinTitle.textContent = t.pinterestTitle;
     
-    // ПОДВАЛ
     const footerP = document.querySelector('footer p');
     if (footerP) footerP.textContent = t.footer;
     
@@ -267,10 +265,16 @@ function switchLanguage(langCode) {
     renderLanguages(document.getElementById('search').value);
     renderAlbums(document.getElementById('search').value);
     
+    // Подсветка кнопок RU/EN (верхних и нижних)
     const btnRu = document.getElementById('btn-ru');
     const btnEn = document.getElementById('btn-en');
     if (btnRu) btnRu.style.opacity = langCode === 'ru' ? '1' : '0.4';
     if (btnEn) btnEn.style.opacity = langCode === 'en' ? '1' : '0.4';
+
+    const btnRuEm = document.getElementById('btn-ru-emerald');
+    const btnEnEm = document.getElementById('btn-en-emerald');
+    if (btnRuEm) btnRuEm.style.opacity = langCode === 'ru' ? '1' : '0.4';
+    if (btnEnEm) btnEnEm.style.opacity = langCode === 'en' ? '1' : '0.4';
 }
 
 function renderLanguages(filter = "") {
