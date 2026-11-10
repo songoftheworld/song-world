@@ -365,3 +365,67 @@ if (canvas) {
     }
     window.addEventListener('resize', resize); resize(); draw();
 }
+// ===== ДОБАВЛЯЕМ АЛЬБОМЫ =====
+const albums = [
+    { 
+        name: "Гусии (Кения)", 
+        albumName: "Поцелуй дождя", 
+        nameEn: "Gusii (Kenya)", 
+        albumNameEn: "Kisii Rain",
+        cover: "https://music.song-world.ru/Kisii_Rain_album.jpg", 
+        playerUrl: "https://music.song-world.ru/kisii_rain.html"
+    }
+];
+
+// ===== ОБНОВЛЯЕМ ПЕРЕВОДЫ (ДОБАВЛЯЕМ КЛЮЧИ ДЛЯ ИЗУМРУДНОЙ КНИГИ) =====
+// Найди свой объект translations и добавь в ru и en эти строки:
+// ru: emeraldTitle: "ИЗУМРУДНАЯ КНИГА", emeraldSubtitle: "Инструментальные альбомы «Музыки Мира»", emeraldOpen: "Открыть в полном размере →"
+// en: emeraldTitle: "THE EMERALD BOOK", emeraldSubtitle: "Instrumental albums of «Music of the World»", emeraldOpen: "Open in full size →"
+
+// ===== ДОБАВЛЯЕМ ФУНКЦИЮ ДЛЯ АЛЬБОМОВ =====
+function renderAlbums(filter = "") {
+    const list = document.getElementById("album-list");
+    if (!list) return;
+    list.innerHTML = "";
+    const lowerFilter = filter.toLowerCase();
+    
+    albums
+        .filter(album => (currentLang === 'ru' ? album.name : album.nameEn || album.name).toLowerCase().includes(lowerFilter))
+        .forEach(album => {
+            const li = document.createElement("li");
+            li.className = "album-item";
+            const cardLink = document.createElement("a");
+            cardLink.href = album.playerUrl;
+            cardLink.target = "_blank";
+            cardLink.className = "album-link";
+            
+            const img = document.createElement("img");
+            img.src = album.cover;
+            img.alt = currentLang === 'ru' ? album.name : album.nameEn;
+            img.className = "album-cover";
+            
+            const title = document.createElement("h3");
+            title.className = "album-title";
+            title.textContent = currentLang === 'ru' ? album.name : album.nameEn;
+            
+            const subtitle = document.createElement("p");
+            subtitle.className = "album-subtitle";
+            subtitle.textContent = currentLang === 'ru' ? album.albumName : album.albumNameEn;
+            
+            cardLink.appendChild(img);
+            cardLink.appendChild(title);
+            cardLink.appendChild(subtitle);
+            li.appendChild(cardLink);
+            list.appendChild(li);
+        });
+}
+
+// ===== ОБНОВЛЯЕМ switchLanguage (ЧТОБЫ МЕНЯЛИСЬ ТЕКСТЫ) =====
+// В твоей функции switchLanguage добавь в конец этот код:
+// const emeraldTitle = document.getElementById('emerald-title');
+// const emeraldSubtitle = document.getElementById('emerald-subtitle');
+// const emeraldBtn = document.getElementById('emerald-btn');
+// if (emeraldTitle) emeraldTitle.textContent = t.emeraldTitle;
+// if (emeraldSubtitle) emeraldSubtitle.textContent = t.emeraldSubtitle;
+// if (emeraldBtn) { emeraldBtn.textContent = t.emeraldOpen; emeraldBtn.href = `/song-world/emerald-book/?lang=${langCode}`; }
+// renderAlbums(document.getElementById('search').value);
