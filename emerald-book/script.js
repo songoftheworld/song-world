@@ -1,12 +1,11 @@
 const albums = [
-    // Пример альбома, который мы уже сделали
     { 
-        name: "Kisii Rain", 
-        nameEn: "Kisii Rain", 
-        type: "EP", // Или "Альбом"
-        cover: "https://music.song-world.ru/kisii_rain_bg.jpg", // Путь к обложке
-        playerUrl: "https://music.song-world.ru/kisii_rain.html", // Ссылка на страницу с плеером
-        vkUrl: "" // Ссылка на пост ВК (если есть)
+        name: "Гусии (Кения) — Поцелуй дождя", 
+        nameEn: "Gusii (Kenya) — Kisii Rain", 
+        type: "Альбом",
+        cover: "https://music.song-world.ru/kisii_rain_bg.jpg", 
+        playerUrl: "https://music.song-world.ru/kisii_rain.html", 
+        vkUrl: "https://vk.ru/wall-237994889_860" // Ссылка на пост ВК с анонсом (если есть)
     }
 ];
 
