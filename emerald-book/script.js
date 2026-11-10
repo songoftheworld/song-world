@@ -40,7 +40,8 @@ const translations = {
     }
 };
 
-let currentLang = localStorage.getItem('emeraldLang') || 'ru';
+let urlLang = new URLSearchParams(window.location.search).get('lang');
+let currentLang = urlLang || localStorage.getItem('emeraldLang') || 'ru';
 
 function getAlbumName(album) {
     return currentLang === 'ru' ? album.name : (album.nameEn || album.name);
