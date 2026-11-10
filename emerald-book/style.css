@@ -135,7 +135,7 @@ main {
 .album-item {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(80, 200, 120, 0.15);
-    border-radius: 15px;
+    border-radius: 0; /* Убрали скругление у всей карточки */
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
