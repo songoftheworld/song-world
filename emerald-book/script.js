@@ -4,7 +4,7 @@ const albums = [
         albumName: "Поцелуй дождя", 
         nameEn: "Gusii (Kenya)", 
         albumNameEn: "Kisii Rain",
-        cover: "https://music.song-world.ru/kisii_rain_bg.jpg", 
+        cover: "https://music.song-world.ru/Kisii_Rain_album.jpg", // Новая ссылка на твою квадратную обложку
         playerUrl: "https://music.song-world.ru/kisii_rain.html"
     }
 ];
