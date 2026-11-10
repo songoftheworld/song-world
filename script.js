@@ -210,7 +210,7 @@ const translations = {
         emeraldDesc1: "Музыка, которая не нуждается в переводе.",
         emeraldDesc2: "Целые альбомы, созданные для вдохновения и путешествий.",
         emeraldDesc3: "Слушай. Чувствуй. Рождается наш общий свет.",
-        emeraldOpen: "Открыть в полном размере →",
+        emeraldOpen: "Открыть Изумрудную Книгу →",
         albumCountText: (n) => `Альбомов: ${n}`
     },
     en: {
@@ -230,7 +230,7 @@ const translations = {
         emeraldDesc1: "Music that needs no translation.",
         emeraldDesc2: "Full albums created for inspiration and travel.",
         emeraldDesc3: "Listen. Feel. Our shared light is born.",
-        emeraldOpen: "Open in full size →",
+        emeraldOpen: "Open the Emerald Book →",
         albumCountText: (n) => `Albums: ${n}`
     }
 };
