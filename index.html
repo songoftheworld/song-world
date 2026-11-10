@@ -9,7 +9,7 @@
 <body>
     <canvas id="stars"></canvas>
 
-    <!-- Переключатель языков (Верхний, для Золотой книги) -->
+    <!-- Переключатель языков (Верхний) -->
     <div class="lang-switch" style="position: absolute; top: 20px; right: 20px; z-index: 10; display: flex; gap: 10px;">
         <button id="btn-ru" onclick="switchLanguage('ru')" style="background: none; border: 1px solid #FFD700; color: #FFD700; padding: 5px 12px; border-radius: 5px; cursor: pointer; font-family: 'Georgia', serif; font-weight: bold;">RU</button>
         <button id="btn-en" onclick="switchLanguage('en')" style="background: none; border: 1px solid #FFD700; color: #FFD700; padding: 5px 12px; border-radius: 5px; cursor: pointer; font-family: 'Georgia', serif; font-weight: bold;">EN</button>
@@ -43,27 +43,32 @@
     <!-- ================= ИЗУМРУДНАЯ КНИГА ================= -->
     <div class="emerald-section" style="max-width: 1300px; margin: 60px auto; padding: 40px 20px; border-top: 1px solid rgba(80, 200, 120, 0.3); text-align: center; position: relative; z-index: 2;">
         
-        <!-- Переключатель языков (Нижний, для Изумрудной книги) -->
+        <!-- Нижний переключатель -->
         <div class="emerald-lang-switch" style="position: absolute; top: 20px; right: 20px; display: flex; gap: 10px;">
             <button id="btn-ru-emerald" onclick="switchLanguage('ru')" style="background: none; border: 1px solid #50C878; color: #50C878; padding: 5px 12px; border-radius: 5px; cursor: pointer; font-family: 'Georgia', serif; font-weight: bold;">RU</button>
             <button id="btn-en-emerald" onclick="switchLanguage('en')" style="background: none; border: 1px solid #50C878; color: #50C878; padding: 5px 12px; border-radius: 5px; cursor: pointer; font-family: 'Georgia', serif; font-weight: bold;">EN</button>
         </div>
 
+        <!-- Заголовок и описание -->
         <h1 id="emerald-title" style="font-size: 3.5rem; letter-spacing: 10px; color: #50C878; text-shadow: 0 0 8px rgba(80, 200, 120, 0.7), 0 0 15px rgba(80, 200, 120, 0.4), 0 1px 2px rgba(0, 0, 0, 0.5); margin-bottom: 8px; font-weight: normal; font-family: 'Georgia', serif;">ИЗУМРУДНАЯ КНИГА</h1>
+        
+        <!-- Вот оно, описание! -->
         <p id="emerald-subtitle" class="subtitle" style="font-size: 1.3rem; color: #50C878; font-style: italic; margin-bottom: 18px; letter-spacing: 2px; text-shadow: 0 0 5px rgba(80, 200, 120, 0.3);">«Музыка Мира» — Алексей Роньжин. Инструментальный проект.</p>
+        
         <p class="lang-counter" style="color: #50C878; font-size: 1.15rem; margin-bottom: 15px; letter-spacing: 1px; text-shadow: 0 0 5px rgba(80, 200, 120, 0.4);">💎 <span id="album-count">0</span></p>
         
         <ul id="album-list" class="album-grid"></ul>
         
         <div style="margin-top: 25px;">
-            <a id="emerald-btn" href="/song-world/emerald-book/" target="_blank" style="display: inline-block; color: #061224; background: #50C878; text-decoration: none; padding: 12px 25px; border-radius: 25px; font-weight: bold; font-family: 'Georgia', serif; transition: 0.3s; box-shadow: 0 4px 15px rgba(80, 200, 120, 0.4);">
+            <!-- Кнопка со свечением (класс emerald-open-btn) -->
+            <a id="emerald-btn" href="/song-world/emerald-book/" target="_blank" class="emerald-open-btn" style="display: inline-block; color: #061224; background: #50C878; text-decoration: none; padding: 12px 25px; border-radius: 25px; font-weight: bold; font-family: 'Georgia', serif; transition: 0.3s; box-shadow: 0 4px 15px rgba(80, 200, 120, 0.4);">
                 Открыть Изумрудную Книгу →
             </a>
         </div>
     </div>
     <!-- =================================================== -->
 
-    <!-- ВИДЖЕТ PINTEREST (Восстановлен) -->
+    <!-- ВИДЖЕТ PINTEREST -->
     <div class="pinterest-widget" style="position: relative; z-index: 1;">
         <h2 id="pinterest-title">Pinterest</h2>
         <a
@@ -79,12 +84,8 @@
         <p>© Alexey Ronzhin</p>
     </footer>
 
-    <!-- Скрипт Pinterest -->
     <script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script>
-
-    <!-- GoatCounter -->
     <script data-goatcounter="https://song-world.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-
     <script src="script.js"></script>
 </body>
 </html>
