@@ -9,7 +9,6 @@ const albums = [
     }
 ];
 
-// ===== СЛОВАРИ ПЕРЕВОДОВ ИНТЕРФЕЙСА =====
 const translations = {
     ru: {
         title: "ИЗУМРУДНАЯ КНИГА",
@@ -47,7 +46,6 @@ function getAlbumName(album) {
     return currentLang === 'ru' ? album.name : (album.nameEn || album.name);
 }
 
-// ===== ПЕРЕКЛЮЧЕНИЕ ЯЗЫКА =====
 function switchLanguage(langCode) {
     currentLang = langCode;
     localStorage.setItem('emeraldLang', langCode);
@@ -93,8 +91,11 @@ function renderAlbums(filter = "") {
     albums
         .filter(album => getAlbumName(album).toLowerCase().includes(lowerFilter))
         .forEach(album => {
-            const li = document.createElement("li");
-            li.className = "album-item";
+            // Создаём ссылку на весь квадрат
+            const cardLink = document.createElement("a");
+            cardLink.href = album.playerUrl;
+            cardLink.target = "_blank";
+            cardLink.className = "album-link"; 
             
             // Обложка
             const img = document.createElement("img");
@@ -102,28 +103,25 @@ function renderAlbums(filter = "") {
             img.alt = getAlbumName(album);
             img.className = "album-cover";
             
-            // Название языка и страны (первая строка)
+            // Название языка и страны
             const title = document.createElement("h3");
             title.className = "album-title";
             title.textContent = currentLang === 'ru' ? album.name : album.nameEn;
             
-            // Название альбома (вторая строка)
+            // Название альбома
             const subtitle = document.createElement("p");
             subtitle.className = "album-subtitle";
             subtitle.textContent = currentLang === 'ru' ? album.albumName : album.albumNameEn;
             
-            // Кнопка PLAY
-            const playBtn = document.createElement("a");
-            playBtn.href = album.playerUrl;
-            playBtn.target = "_blank";
-            playBtn.textContent = "▶ PLAY";
-            playBtn.className = "play-btn";
+            // Собираем карточку (без кнопки PLAY)
+            cardLink.appendChild(img);
+            cardLink.appendChild(title);
+            cardLink.appendChild(subtitle);
             
-            // Собираем всё вместе
-            li.appendChild(img);
-            li.appendChild(title);
-            li.appendChild(subtitle);
-            li.appendChild(playBtn);
+            // Создаём li и кладём туда ссылку
+            const li = document.createElement("li");
+            li.className = "album-item";
+            li.appendChild(cardLink);
             
             list.appendChild(li);
         });
