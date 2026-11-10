@@ -35,7 +35,7 @@ header {
 h1 {
     font-size: 3.5rem;
     letter-spacing: 10px;
-    color: #50C878; /* Изумрудный цвет */
+    color: #50C878;
     text-shadow: 
         0 0 8px rgba(80, 200, 120, 0.7),
         0 0 15px rgba(80, 200, 120, 0.4),
@@ -123,7 +123,6 @@ main {
     padding: 15px 20px 60px;
 }
 
-/* Сетка для альбомов */
 .album-grid {
     list-style: none;
     display: grid;
@@ -137,12 +136,10 @@ main {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(80, 200, 120, 0.15);
     border-radius: 15px;
-    padding: 20px;
     transition: all 0.3s ease;
-    text-align: center; /* Выравниваем всё по центру */
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Кнопка всегда внизу */
+    overflow: hidden; /* Важно, чтобы картинка не вылезала */
 }
 
 .album-item:hover {
@@ -152,46 +149,34 @@ main {
     box-shadow: 0 10px 25px rgba(80, 200, 120, 0.2);
 }
 
+.album-link {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+}
+
 .album-cover {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 .album-title {
     color: #50C878;
-    margin-bottom: 5px;
+    margin: 15px 15px 5px 15px;
     font-size: 1.15rem;
     font-weight: bold;
+    text-align: center;
 }
 
 .album-subtitle {
-    color: #a0a0a0; /* Слегка серый цвет для второго плана */
+    color: #a0a0a0;
     font-size: 0.95rem;
-    margin-bottom: 20px;
+    margin: 0 15px 20px 15px;
     font-style: italic;
-}
-
-.play-btn {
-    display: inline-block;
-    background: #50C878;
-    color: #061224;
-    padding: 10px 25px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    margin-top: auto; /* Прижимаем кнопку к низу */
-    box-shadow: 0 4px 15px rgba(80, 200, 120, 0.3);
-}
-
-.play-btn:hover {
-    background: #3da05c;
-    transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(80, 200, 120, 0.5);
+    text-align: center;
 }
 
 footer {
