@@ -9,7 +9,7 @@
 <body>
     <canvas id="stars"></canvas>
 
-    <!-- Переключатель языков (Верхний) -->
+    <!-- Переключатель языков (Верхний, для Золотой книги) -->
     <div class="lang-switch" style="position: absolute; top: 20px; right: 20px; z-index: 10; display: flex; gap: 10px;">
         <button id="btn-ru" onclick="switchLanguage('ru')" style="background: none; border: 1px solid #FFD700; color: #FFD700; padding: 5px 12px; border-radius: 5px; cursor: pointer; font-family: 'Georgia', serif; font-weight: bold;">RU</button>
         <button id="btn-en" onclick="switchLanguage('en')" style="background: none; border: 1px solid #FFD700; color: #FFD700; padding: 5px 12px; border-radius: 5px; cursor: pointer; font-family: 'Georgia', serif; font-weight: bold;">EN</button>
@@ -43,7 +43,7 @@
     <!-- ================= ИЗУМРУДНАЯ КНИГА ================= -->
     <div class="emerald-section" style="max-width: 1300px; margin: 60px auto; padding: 40px 20px; border-top: 1px solid rgba(80, 200, 120, 0.3); text-align: center; position: relative; z-index: 2;">
         
-        <!-- Переключатель языков (Нижний) -->
+        <!-- Переключатель языков (Нижний, для Изумрудной книги) -->
         <div class="emerald-lang-switch" style="position: absolute; top: 20px; right: 20px; display: flex; gap: 10px;">
             <button id="btn-ru-emerald" onclick="switchLanguage('ru')" style="background: none; border: 1px solid #50C878; color: #50C878; padding: 5px 12px; border-radius: 5px; cursor: pointer; font-family: 'Georgia', serif; font-weight: bold;">RU</button>
             <button id="btn-en-emerald" onclick="switchLanguage('en')" style="background: none; border: 1px solid #50C878; color: #50C878; padding: 5px 12px; border-radius: 5px; cursor: pointer; font-family: 'Georgia', serif; font-weight: bold;">EN</button>
@@ -53,13 +53,6 @@
         <p id="emerald-subtitle" class="subtitle" style="font-size: 1.3rem; color: #50C878; font-style: italic; margin-bottom: 18px; letter-spacing: 2px; text-shadow: 0 0 5px rgba(80, 200, 120, 0.3);">«Музыка Мира» — Алексей Роньжин. Инструментальный проект.</p>
         <p class="lang-counter" style="color: #50C878; font-size: 1.15rem; margin-bottom: 15px; letter-spacing: 1px; text-shadow: 0 0 5px rgba(80, 200, 120, 0.4);">💎 <span id="album-count">0</span></p>
         
-        <!-- ВОТ ЭТО ОПИСАНИЕ МЫ ВОЗВРАЩАЕМ -->
-        <p class="description" id="emerald-description" style="max-width: 750px; margin: 0 auto 22px; line-height: 1.8; color: #50C878; font-size: 1.05rem; text-shadow: 0 0 5px rgba(80, 200, 120, 0.3);">
-            Music that needs no translation.<br>
-            Full albums created for inspiration and travel.<br>
-            Listen. Feel. Our shared light is born.
-        </p>
-
         <ul id="album-list" class="album-grid"></ul>
         
         <div style="margin-top: 25px;">
@@ -70,8 +63,8 @@
     </div>
     <!-- =================================================== -->
 
-    <!-- Виджет Pinterest (доска) -->
-    <div class="pinterest-widget">
+    <!-- ВИДЖЕТ PINTEREST (Восстановлен) -->
+    <div class="pinterest-widget" style="position: relative; z-index: 1;">
         <h2 id="pinterest-title">Pinterest</h2>
         <a
           data-pin-do="embedBoard"
@@ -82,12 +75,12 @@
         ></a>
     </div>
 
-    <footer>
+    <footer style="position: relative; z-index: 1;">
         <p>© Alexey Ronzhin</p>
     </footer>
 
     <!-- Скрипт Pinterest -->
-    <script type="text/javascript" async defer src="//assets.pinterest.com/pinit.js"></script>
+    <script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script>
 
     <!-- GoatCounter -->
     <script data-goatcounter="https://song-world.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
