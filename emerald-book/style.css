@@ -132,24 +132,23 @@ main {
     margin: 0 auto;
 }
 
+/* КАРТОЧКА АЛЬБОМА */
 .album-item {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(80, 200, 120, 0.15);
-    border-radius: 0; /* Убрали скругление у всей карточки */
+    border-radius: 0; /* Прямые углы для карточки */
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
     overflow: hidden;
 }
 
-.album-item {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(80, 200, 120, 0.15);
-    border-radius: 15px;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden; /* Вот эта строчка обрезает картинку по краям карточки */
+/* Эффект при наведении на карточку */
+.album-item:hover {
+    background: rgba(80, 200, 120, 0.08);
+    border-color: #50C878;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(80, 200, 120, 0.3);
 }
 
 .album-link {
@@ -158,16 +157,17 @@ main {
     text-decoration: none;
     color: inherit;
     height: 100%;
-    padding-bottom: 20px; /* Отступ снизу для PLAY */
+    padding-bottom: 20px;
 }
 
+/* КАРТИНКА */
 .album-cover {
     width: 100%;
     height: auto;
     aspect-ratio: 1 / 1;
     object-fit: cover;
     display: block;
-    border-radius: 0; /* Убираем скругление у самой картинки */
+    border-radius: 0;
 }
 
 .album-title {
@@ -186,7 +186,7 @@ main {
     text-align: center;
 }
 
-/* Надпись PLAY */
+/* КНОПКА PLAY */
 .play-text {
     display: inline-block;
     background: #50C878;
@@ -196,11 +196,11 @@ main {
     font-weight: bold;
     transition: all 0.3s ease;
     text-align: center;
-    margin: 0 auto; /* Центрируем */
+    margin: 0 auto;
     box-shadow: 0 4px 15px rgba(80, 200, 120, 0.3);
 }
 
-/* При наведении на карточку PLAY становится ярче */
+/* Кнопка PLAY при наведении на карточку */
 .album-item:hover .play-text {
     background: #3da05c;
     transform: scale(1.05);
@@ -271,20 +271,4 @@ footer {
     text-shadow: 
         0 0 8px rgba(80, 200, 120, 0.8),
         0 0 15px rgba(80, 200, 120, 0.5);
-}
-
-/* Принудительно убираем скругления внутри карточек альбомов */
-.album-item,
-.album-link,
-.album-cover {
-    border-radius: 0 !important;
-}
-
-/* Если картинка всё равно обрезается, принудительно задаём ей размеры */
-.album-cover {
-    width: 100% !important;
-    height: auto !important;
-    aspect-ratio: 1 / 1 !important;
-    object-fit: fill !important; /* fill заставит картинку заполнить квадрат целиком */
-    display: block !important;
 }
