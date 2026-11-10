@@ -1,11 +1,11 @@
 const albums = [
     { 
-        name: "Гусии (Кения) — Поцелуй дождя", 
-        nameEn: "Gusii (Kenya) — Kisii Rain", 
-        type: "Альбом",
+        name: "Гусии (Кения)", 
+        albumName: "Поцелуй дождя", 
+        nameEn: "Gusii (Kenya)", 
+        albumNameEn: "Kisii Rain",
         cover: "https://music.song-world.ru/kisii_rain_bg.jpg", 
-        playerUrl: "https://music.song-world.ru/kisii_rain.html", 
-        vkUrl: "https://vk.ru/wall-237994889_860" // Ссылка на пост ВК с анонсом (если есть)
+        playerUrl: "https://music.song-world.ru/kisii_rain.html"
     }
 ];
 
