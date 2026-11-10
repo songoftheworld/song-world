@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Изумрудная книга — Музыка Мира</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="stars"></canvas>
+
+    <!-- Переключатель языков -->
+    <div class="lang-switch" style="position: absolute; top: 20px; right: 20px; z-index: 10; display: flex; gap: 10px;">
+        <button id="btn-ru" onclick="switchLanguage('ru')" style="background: none; border: 1px solid #50C878; color: #50C878; padding: 5px 12px; border-radius: 5px; cursor: pointer; font-family: 'Georgia', serif; font-weight: bold;">RU</button>
+        <button id="btn-en" onclick="switchLanguage('en')" style="background: none; border: 1px solid #50C878; color: #50C878; padding: 5px 12px; border-radius: 5px; cursor: pointer; font-family: 'Georgia', serif; font-weight: bold;">EN</button>
+    </div>
+
+    <header>
+        <h1>ИЗУМРУДНАЯ КНИГА</h1>
+        <p class="subtitle">«Музыка Мира» — Алексей Роньжин. Инструментальный проект.</p>
+        <p class="lang-counter">💎 <span id="lang-count">0</span></p>
+        <p class="description">
+            Музыка, которая не нуждается в переводе.<br>
+            Целые альбомы, созданные для вдохновения и путешествий.<br>
+            Слушай. Чувствуй. Рождается наш общий свет.
+        </p>
+        <div class="links">
+            <a href="https://song-world.ru/public/pesnya-mira" target="_blank">📻 Радио</a>
+            <a href="https://vk.ru/playlist_neuromusic" target="_blank">🎵 ВКонтакте</a>
+            <a href="https://www.youtube.com/@Alexey_Ronzhin" target="_blank">▶️ YouTube</a>
+            <a href="https://t.me/world_song_project" target="_blank">✈️ Telegram</a>
+        </div>
+    </header>
+
+    <div class="search-box">
+        <input type="text" id="search" placeholder="Поиск по альбомам...">
+    </div>
+
+    <main>
+        <ul id="album-list" class="album-grid"></ul>
+    </main>
+
+    <footer>
+        <p>© Алексей Роньжин. «Музыка Мира».</p>
+    </footer>
+
+    <!-- GoatCounter -->
+    <script data-goatcounter="https://song-world.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>
