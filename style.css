@@ -36,7 +36,10 @@ h1 {
     font-size: 3.5rem;
     letter-spacing: 10px;
     color: #FFD700;
-    text-shadow: 0 0 8px rgba(255, 215, 0, 0.7), 0 0 15px rgba(255, 215, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 
+        0 0 8px rgba(255, 215, 0, 0.7),
+        0 0 15px rgba(255, 215, 0, 0.4),
+        0 1px 2px rgba(0, 0, 0, 0.5);
     margin-bottom: 8px;
     font-weight: normal;
     font-family: 'Georgia', serif;
@@ -68,7 +71,7 @@ h1 {
     margin-bottom: 15px;
 }
 
-.links a, .emerald-btn-link {
+.links a {
     color: #FFD700;
     text-decoration: none;
     border: 1px solid rgba(255, 215, 0, 0.5);
@@ -81,24 +84,18 @@ h1 {
 }
 
 .links a:hover {
-    background: #FFD700; /* Возвращаем золотой цвет */
+    background: #FFD700; /* Золотой ховер */
     color: #061224;
     border-color: #FFD700;
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6); /* Золотое свечение */
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
     transform: translateY(-2px);
 }
 
-/* Стиль для кнопок Изумрудной книги */
-.emerald-btn-link {
-    color: #50C878 !important;
-    border-color: rgba(80, 200, 120, 0.5) !important;
-    background: rgba(80, 200, 120, 0.05) !important;
-}
-.emerald-btn-link:hover {
-    background: #50C878 !important;
-    color: #061224 !important;
-    border-color: #50C878 !important;
-    box-shadow: 0 0 20px rgba(80, 200, 120, 0.6) !important;
+/* Свечение для кнопки "Открыть" */
+.emerald-open-btn:hover {
+    background: #3da05c !important; /* Яркий зелёный */
+    box-shadow: 0 0 25px rgba(80, 200, 120, 0.8) !important;
+    transform: translateY(-3px) scale(1.05);
 }
 
 .search-box {
@@ -272,26 +269,6 @@ main {
     box-shadow: 0 6px 20px rgba(80, 200, 120, 0.5);
 }
 
-/* Стиль для кнопки ОТКРЫТЬ */
-.open-full-btn {
-    display: inline-block;
-    color: #061224;
-    background: #50C878;
-    text-decoration: none;
-    padding: 12px 25px;
-    border-radius: 25px;
-    font-weight: bold;
-    font-family: 'Georgia', serif;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(80, 200, 120, 0.4);
-}
-
-.open-full-btn:hover {
-    background: #3da05c;
-    transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(80, 200, 120, 0.6);
-}
-
 footer {
     text-align: center;
     padding: 30px;
@@ -302,46 +279,22 @@ footer {
 }
 
 @media (max-width: 1000px) {
-    .lang-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    h1 {
-        font-size: 3rem;
-        letter-spacing: 8px;
-    }
+    .lang-grid { grid-template-columns: repeat(3, 1fr); }
+    h1 { font-size: 3rem; letter-spacing: 8px; }
 }
 
 @media (max-width: 700px) {
-    .lang-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    h1 {
-        font-size: 2.5rem;
-        letter-spacing: 6px;
-    }
-    .subtitle {
-        font-size: 1.15rem;
-    }
+    .lang-grid { grid-template-columns: repeat(2, 1fr); }
+    h1 { font-size: 2.5rem; letter-spacing: 6px; }
+    .subtitle { font-size: 1.15rem; }
 }
 
 @media (max-width: 500px) {
-    .lang-grid {
-        grid-template-columns: 1fr;
-    }
-    h1 {
-        font-size: 1.8rem;
-        letter-spacing: 4px;
-    }
-    .subtitle {
-        font-size: 1rem;
-    }
-    .description {
-        font-size: 0.95rem;
-    }
-    .links a {
-        padding: 8px 16px;
-        font-size: 0.9rem;
-    }
+    .lang-grid { grid-template-columns: 1fr; }
+    h1 { font-size: 1.8rem; letter-spacing: 4px; }
+    .subtitle { font-size: 1rem; }
+    .description { font-size: 0.95rem; }
+    .links a { padding: 8px 16px; font-size: 0.9rem; }
 }
 
 .lang-counter {
@@ -356,9 +309,7 @@ footer {
     font-weight: bold;
     font-size: 1.3rem;
     color: #fff;
-    text-shadow: 
-        0 0 8px rgba(255, 215, 0, 0.8),
-        0 0 15px rgba(255, 215, 0, 0.5);
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.8), 0 0 15px rgba(255, 215, 0, 0.5);
 }
 
 .pinterest-widget {
