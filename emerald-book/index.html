@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Золотая и Изумрудная книги — Песня Мира</title>
+    <title>Изумрудная книга — Музыка Мира</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,17 +11,17 @@
 
     <!-- Переключатель языков -->
     <div class="lang-switch" style="position: absolute; top: 20px; right: 20px; z-index: 10; display: flex; gap: 10px;">
-        <button id="btn-ru" onclick="switchLanguage('ru')" style="background: none; border: 1px solid #FFD700; color: #FFD700; padding: 5px 12px; border-radius: 5px; cursor: pointer; font-family: 'Georgia', serif; font-weight: bold;">RU</button>
-        <button id="btn-en" onclick="switchLanguage('en')" style="background: none; border: 1px solid #FFD700; color: #FFD700; padding: 5px 12px; border-radius: 5px; cursor: pointer; font-family: 'Georgia', serif; font-weight: bold;">EN</button>
+        <button id="btn-ru" onclick="switchLanguage('ru')" style="background: none; border: 1px solid #50C878; color: #50C878; padding: 5px 12px; border-radius: 5px; cursor: pointer; font-family: 'Georgia', serif; font-weight: bold;">RU</button>
+        <button id="btn-en" onclick="switchLanguage('en')" style="background: none; border: 1px solid #50C878; color: #50C878; padding: 5px 12px; border-radius: 5px; cursor: pointer; font-family: 'Georgia', serif; font-weight: bold;">EN</button>
     </div>
 
     <header>
-        <h1>ЗОЛОТАЯ КНИГА</h1>
-        <p class="subtitle">«Песня Мира» — Алексей Роньжин. Авторский проект.</p>
-        <p class="lang-counter">📖 <span id="lang-count">0</span></p>
+        <h1>ИЗУМРУДНАЯ КНИГА</h1>
+        <p class="subtitle">«Музыка Мира» — Алексей Роньжин. Инструментальный проект.</p>
+        <p class="lang-counter">💎 <span id="lang-count">0</span></p>
         <p class="description">
-            Одна песня звучит на всех языках мира.<br>
-            Каждая ссылка ведёт на пост VK с текстом, переводом и аудио.<br>
+            Музыка, которая не нуждается в переводе.<br>
+            Целые альбомы, созданные для вдохновения и путешествий.<br>
             Слушай. Чувствуй. Рождается наш общий свет.
         </p>
         <div class="links">
@@ -33,51 +33,16 @@
     </header>
 
     <div class="search-box">
-        <input type="text" id="search" placeholder="Поиск по языку...">
+        <input type="text" id="search" placeholder="Поиск по альбомам...">
     </div>
 
     <main>
-        <ul id="lang-list" class="lang-grid"></ul>
+        <ul id="album-list" class="album-grid"></ul>
     </main>
 
-    <!-- ================= ИЗУМРУДНАЯ КНИГА ================= -->
-    <div class="emerald-section" style="max-width: 1300px; margin: 60px auto; padding: 40px 20px; border-top: 1px solid rgba(80, 200, 120, 0.3); text-align: center;">
-        <h2 style="color: #50C878; font-size: 2.5rem; letter-spacing: 5px; margin-bottom: 10px; text-shadow: 0 0 10px rgba(80, 200, 120, 0.5);">ИЗУМРУДНАЯ КНИГА</h2>
-        <p style="color: #50C878; font-style: italic; margin-bottom: 30px; font-size: 1.1rem;">«Музыка Мира» — инструментальные альбомы</p>
-        
-        <!-- Встроенная Изумрудная книга -->
-        <iframe src="/song-world/emerald-book/" 
-                style="width: 100%; max-width: 1200px; height: 850px; border: 1px solid rgba(80, 200, 120, 0.2); border-radius: 15px; background: #061224; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" 
-                frameborder="0" 
-                loading="lazy">
-        </iframe>
-        
-        <div style="margin-top: 25px;">
-            <a href="/song-world/emerald-book/" target="_blank" style="display: inline-block; color: #061224; background: #50C878; text-decoration: none; padding: 12px 25px; border-radius: 25px; font-weight: bold; font-family: 'Georgia', serif; transition: 0.3s; box-shadow: 0 4px 15px rgba(80, 200, 120, 0.4);">
-                Открыть Изумрудную книгу в полном размере →
-            </a>
-        </div>
-    </div>
-    <!-- =================================================== -->
-
-    <!-- Виджет Pinterest (доска) -->
-    <div class="pinterest-widget">
-        <h2>📌 Наш Pinterest</h2>
-        <a
-          data-pin-do="embedBoard"
-          data-pin-board-width="900"
-          data-pin-scale-height="550"
-          data-pin-scale-width="160"
-          href="https://ru.pinterest.com/dar6698/песня-мира-song-of-the-world/"
-        ></a>
-    </div>
-
     <footer>
-        <p>© Алексей Роньжин. «Песня Мира».</p>
+        <p>© Алексей Роньжин. «Музыка Мира».</p>
     </footer>
-
-    <!-- Скрипт Pinterest -->
-    <script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script>
 
     <!-- GoatCounter -->
     <script data-goatcounter="https://song-world.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
