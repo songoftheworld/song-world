@@ -201,13 +201,17 @@ const translations = {
         desc3: "Слушай. Чувствуй. Рождается наш общий свет.",
         btnRadio: "📻 Радио", btnVk: "🎵 ВКонтакте", btnYt: "▶️ YouTube", btnTg: "✈️ Telegram",
         searchPlaceholder: "Поиск по языку...",
-        pinterestTitle: "Pinterest", // Убрали "Наш"
+        pinterestTitle: "Pinterest",
         footer: "© Алексей Роньжин. «Песня Мира».",
         countText: (n) => `В книге: ${n} языков`,
         
         emeraldTitle: "ИЗУМРУДНАЯ КНИГА",
         emeraldSubtitle: "«Музыка Мира» — Алексей Роньжин. Инструментальный проект.",
-        emeraldOpen: "Открыть в полном размере →"
+        emeraldDesc1: "Музыка, которая не нуждается в переводе.",
+        emeraldDesc2: "Целые альбомы, созданные для вдохновения и путешествий.",
+        emeraldDesc3: "Слушай. Чувствуй. Рождается наш общий свет.",
+        emeraldOpen: "Открыть в полном размере →",
+        playText: "▶ PLAY"
     },
     en: {
         title: "THE GOLDEN BOOK",
@@ -223,7 +227,11 @@ const translations = {
         
         emeraldTitle: "THE EMERALD BOOK",
         emeraldSubtitle: "«Music of the World» — Alexey Ronzhin. Instrumental project.",
-        emeraldOpen: "Open in full size →"
+        emeraldDesc1: "Music that needs no translation.",
+        emeraldDesc2: "Full albums created for inspiration and travel.",
+        emeraldDesc3: "Listen. Feel. Our shared light is born.",
+        emeraldOpen: "Open in full size →",
+        playText: "▶ PLAY"
     }
 };
 
@@ -235,12 +243,12 @@ function switchLanguage(langCode) {
     const t = translations[langCode];
     
     // Золотая книга
-    document.querySelector('h1').textContent = t.title;
-    document.querySelector('.subtitle').textContent = t.subtitle;
-    const desc = document.querySelector('.description');
+    document.querySelector('header h1').textContent = t.title;
+    document.querySelector('header .subtitle').textContent = t.subtitle;
+    const desc = document.querySelector('header .description');
     if (desc) desc.innerHTML = t.desc1 + '<br>' + t.desc2 + '<br>' + t.desc3;
     
-    const links = document.querySelectorAll('.links a');
+    const links = document.querySelectorAll('header .links a');
     if (links.length >= 4) {
         links[0].textContent = t.btnRadio; links[1].textContent = t.btnVk;
         links[2].textContent = t.btnYt; links[3].textContent = t.btnTg;
@@ -253,9 +261,12 @@ function switchLanguage(langCode) {
     // Изумрудная книга
     const emeraldTitle = document.getElementById('emerald-title');
     const emeraldSubtitle = document.getElementById('emerald-subtitle');
+    const emeraldDesc = document.getElementById('emerald-description');
     const emeraldBtn = document.getElementById('emerald-btn');
+    
     if (emeraldTitle) emeraldTitle.textContent = t.emeraldTitle;
     if (emeraldSubtitle) emeraldSubtitle.textContent = t.emeraldSubtitle;
+    if (emeraldDesc) emeraldDesc.innerHTML = t.emeraldDesc1 + '<br>' + t.emeraldDesc2 + '<br>' + t.emeraldDesc3;
     if (emeraldBtn) {
         emeraldBtn.textContent = t.emeraldOpen;
         emeraldBtn.href = `/song-world/emerald-book/?lang=${langCode}`;
@@ -264,7 +275,6 @@ function switchLanguage(langCode) {
     renderLanguages(document.getElementById('search').value);
     renderAlbums(document.getElementById('search').value);
     
-    // Кнопки RU/EN
     const btnRu = document.getElementById('btn-ru');
     const btnEn = document.getElementById('btn-en');
     if (btnRu) btnRu.style.opacity = langCode === 'ru' ? '1' : '0.4';
@@ -323,15 +333,21 @@ function renderAlbums(filter = "") {
             subtitle.className = "album-subtitle";
             subtitle.textContent = currentLang === 'ru' ? album.albumName : album.albumNameEn;
             
+            // Возвращаем надпись PLAY
+            const playText = document.createElement("div");
+            playText.className = "play-text";
+            playText.textContent = translations[currentLang].playText;
+            
             cardLink.appendChild(img);
             cardLink.appendChild(title);
             cardLink.appendChild(subtitle);
+            cardLink.appendChild(playText);
             li.appendChild(cardLink);
             list.appendChild(li);
         });
         
     const albumCounter = document.getElementById("album-count");
-    if (albumCounter) albumCounter.textContent = `Альбомов: ${albums.length}`; // Счётчик альбомов
+    if (albumCounter) albumCounter.textContent = `Альбомов: ${albums.length}`;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
