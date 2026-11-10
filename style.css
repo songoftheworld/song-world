@@ -241,6 +241,26 @@ main {
     text-align: center;
 }
 
+/* Стиль для надписи PLAY */
+.play-text {
+    display: inline-block;
+    background: #50C878;
+    color: #061224;
+    padding: 8px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-align: center;
+    margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(80, 200, 120, 0.3);
+}
+
+.album-item:hover .play-text {
+    background: #3da05c;
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(80, 200, 120, 0.5);
+}
+
 footer {
     text-align: center;
     padding: 30px;
