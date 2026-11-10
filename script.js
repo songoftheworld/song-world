@@ -207,6 +207,9 @@ const translations = {
         
         emeraldTitle: "ИЗУМРУДНАЯ КНИГА",
         emeraldSubtitle: "«Музыка Мира» — Алексей Роньжин. Инструментальный проект.",
+        emeraldDesc1: "Музыка, которая не нуждается в переводе.",
+        emeraldDesc2: "Целые альбомы, созданные для вдохновения и путешествий.",
+        emeraldDesc3: "Слушай. Чувствуй. Рождается наш общий свет.",
         emeraldOpen: "Открыть Изумрудную Книгу →"
     },
     en: {
@@ -223,6 +226,9 @@ const translations = {
         
         emeraldTitle: "THE EMERALD BOOK",
         emeraldSubtitle: "«Music of the World» — Alexey Ronzhin. Instrumental project.",
+        emeraldDesc1: "Music that needs no translation.",
+        emeraldDesc2: "Full albums created for inspiration and travel.",
+        emeraldDesc3: "Listen. Feel. Our shared light is born.",
         emeraldOpen: "Open the Emerald Book →"
     }
 };
@@ -234,6 +240,7 @@ function switchLanguage(langCode) {
     localStorage.setItem('siteLang', langCode);
     const t = translations[langCode];
     
+    // Золотая книга
     document.querySelector('header h1').textContent = t.title;
     document.querySelector('header .subtitle').textContent = t.subtitle;
     const desc = document.querySelector('.description');
@@ -252,11 +259,15 @@ function switchLanguage(langCode) {
     const footerP = document.querySelector('footer p');
     if (footerP) footerP.textContent = t.footer;
     
+    // Изумрудная книга
     const emeraldTitle = document.getElementById('emerald-title');
     const emeraldSubtitle = document.getElementById('emerald-subtitle');
     const emeraldBtn = document.getElementById('emerald-btn');
+    const emeraldDesc = document.getElementById('emerald-description');
+    
     if (emeraldTitle) emeraldTitle.textContent = t.emeraldTitle;
     if (emeraldSubtitle) emeraldSubtitle.textContent = t.emeraldSubtitle;
+    if (emeraldDesc) emeraldDesc.innerHTML = t.emeraldDesc1 + '<br>' + t.emeraldDesc2 + '<br>' + t.emeraldDesc3;
     if (emeraldBtn) {
         emeraldBtn.textContent = t.emeraldOpen;
         emeraldBtn.href = `https://songoftheworld.github.io/song-world/emerald-book/?lang=${langCode}`;
