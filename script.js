@@ -207,11 +207,7 @@ const translations = {
         
         emeraldTitle: "ИЗУМРУДНАЯ КНИГА",
         emeraldSubtitle: "«Музыка Мира» — Алексей Роньжин. Инструментальный проект.",
-        emeraldDesc1: "Музыка, которая не нуждается в переводе.",
-        emeraldDesc2: "Целые альбомы, созданные для вдохновения и путешествий.",
-        emeraldDesc3: "Слушай. Чувствуй. Рождается наш общий свет.",
-        emeraldOpen: "Открыть в полном размере →",
-        playText: "▶ PLAY"
+        emeraldOpen: "Открыть в полном размере →"
     },
     en: {
         title: "THE GOLDEN BOOK",
@@ -227,11 +223,7 @@ const translations = {
         
         emeraldTitle: "THE EMERALD BOOK",
         emeraldSubtitle: "«Music of the World» — Alexey Ronzhin. Instrumental project.",
-        emeraldDesc1: "Music that needs no translation.",
-        emeraldDesc2: "Full albums created for inspiration and travel.",
-        emeraldDesc3: "Listen. Feel. Our shared light is born.",
-        emeraldOpen: "Open in full size →",
-        playText: "▶ PLAY"
+        emeraldOpen: "Open in full size →"
     }
 };
 
@@ -242,13 +234,12 @@ function switchLanguage(langCode) {
     localStorage.setItem('siteLang', langCode);
     const t = translations[langCode];
     
-    // Золотая книга
     document.querySelector('header h1').textContent = t.title;
     document.querySelector('header .subtitle').textContent = t.subtitle;
-    const desc = document.querySelector('header .description');
+    const desc = document.querySelector('.description');
     if (desc) desc.innerHTML = t.desc1 + '<br>' + t.desc2 + '<br>' + t.desc3;
     
-    const links = document.querySelectorAll('header .links a');
+    const links = document.querySelectorAll('.links a');
     if (links.length >= 4) {
         links[0].textContent = t.btnRadio; links[1].textContent = t.btnVk;
         links[2].textContent = t.btnYt; links[3].textContent = t.btnTg;
@@ -258,18 +249,14 @@ function switchLanguage(langCode) {
     const pinTitle = document.getElementById('pinterest-title');
     if (pinTitle) pinTitle.textContent = t.pinterestTitle;
     
-    // Изумрудная книга
     const emeraldTitle = document.getElementById('emerald-title');
     const emeraldSubtitle = document.getElementById('emerald-subtitle');
-    const emeraldDesc = document.getElementById('emerald-description');
     const emeraldBtn = document.getElementById('emerald-btn');
-    
     if (emeraldTitle) emeraldTitle.textContent = t.emeraldTitle;
     if (emeraldSubtitle) emeraldSubtitle.textContent = t.emeraldSubtitle;
-    if (emeraldDesc) emeraldDesc.innerHTML = t.emeraldDesc1 + '<br>' + t.emeraldDesc2 + '<br>' + t.emeraldDesc3;
     if (emeraldBtn) {
         emeraldBtn.textContent = t.emeraldOpen;
-        emeraldBtn.href = `/song-world/emerald-book/?lang=${langCode}`;
+        emeraldBtn.href = `https://songoftheworld.github.io/song-world/emerald-book/?lang=${langCode}`; // Исправлена ссылка!
     }
     
     renderLanguages(document.getElementById('search').value);
@@ -333,15 +320,15 @@ function renderAlbums(filter = "") {
             subtitle.className = "album-subtitle";
             subtitle.textContent = currentLang === 'ru' ? album.albumName : album.albumNameEn;
             
-            // Возвращаем надпись PLAY
+            // Кнопка PLAY внутри карточки
             const playText = document.createElement("div");
             playText.className = "play-text";
-            playText.textContent = translations[currentLang].playText;
+            playText.textContent = "▶ PLAY";
             
             cardLink.appendChild(img);
             cardLink.appendChild(title);
             cardLink.appendChild(subtitle);
-            cardLink.appendChild(playText);
+            cardLink.appendChild(playText); // Добавили кнопку
             li.appendChild(cardLink);
             list.appendChild(li);
         });
