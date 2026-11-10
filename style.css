@@ -22,7 +22,7 @@ body {
     z-index: 0;
 }
 
-header, main, .search-box, footer {
+header, main, .search-box, footer, .emerald-section, .pinterest-widget {
     position: relative;
     z-index: 1;
 }
@@ -84,9 +84,10 @@ h1 {
 }
 
 .links a:hover {
-    background: #FFD700;
+    background: #50C878; /* Зелёный при наведении */
     color: #061224;
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+    border-color: #50C878;
+    box-shadow: 0 0 20px rgba(80, 200, 120, 0.6);
     transform: translateY(-2px);
 }
 
@@ -188,6 +189,7 @@ main {
     margin: 0 auto 30px;
     list-style: none;
     padding: 0;
+    text-align: left;
 }
 
 .album-item {
@@ -241,7 +243,7 @@ main {
     text-align: center;
 }
 
-/* Стиль для надписи PLAY */
+/* Кнопка PLAY внутри карточки */
 .play-text {
     display: inline-block;
     background: #50C878;
