@@ -179,7 +179,19 @@ const languages = [
     { name: "Японский язык", nameEn: "Japanese", url: "https://vk.cc/cZQHel" }
 ];
 
-// ===== СЛОВАРИ ПЕРЕВОДОВ ИНТЕРФЕЙСА =====
+// ===== СПИСОК АЛЬБОМОВ (ИЗУМРУДНАЯ КНИГА) =====
+const albums = [
+    { 
+        name: "Гусии (Кения)", 
+        albumName: "Поцелуй дождя", 
+        nameEn: "Gusii (Kenya)", 
+        albumNameEn: "Kisii Rain",
+        cover: "https://music.song-world.ru/Kisii_Rain_album.jpg", 
+        playerUrl: "https://music.song-world.ru/kisii_rain.html"
+    }
+];
+
+// ===== ПЕРЕВОДЫ ИНТЕРФЕЙСА =====
 const translations = {
     ru: {
         title: "ЗОЛОТАЯ КНИГА",
@@ -187,23 +199,16 @@ const translations = {
         desc1: "Одна песня звучит на всех языках мира.",
         desc2: "Каждая ссылка ведёт на пост VK с текстом, переводом и аудио.",
         desc3: "Слушай. Чувствуй. Рождается наш общий свет.",
-        btnRadio: "📻 Радио",
-        btnVk: "🎵 ВКонтакте",
-        btnYt: "▶️ YouTube",
-        btnTg: "✈️ Telegram",
+        btnRadio: "📻 Радио", btnVk: "🎵 ВКонтакте", btnYt: "▶️ YouTube", btnTg: "✈️ Telegram",
         searchPlaceholder: "Поиск по языку...",
         pinTitle: "📌 Наш Pinterest",
         footer: "© Алексей Роньжин. «Песня Мира».",
-        countText: (n) => {
-            const lastDigit = n % 10;
-            const lastTwo = n % 100;
-            let word = "языков";
-            if (lastTwo < 11 || lastTwo > 14) {
-                if (lastDigit === 1) word = "язык";
-                else if (lastDigit >= 2 && lastDigit <= 4) word = "языка";
-            }
-            return `В книге: ${n} ${word}`;
-        }
+        countText: (n) => `В книге: ${n} языков`,
+        
+        // Для Изумрудной книги
+        emeraldTitle: "ИЗУМРУДНАЯ КНИГА",
+        emeraldSubtitle: "Инструментальные альбомы «Музыки Мира»",
+        emeraldOpen: "Открыть в полном размере →"
     },
     en: {
         title: "THE GOLDEN BOOK",
@@ -211,141 +216,152 @@ const translations = {
         desc1: "One song sounds in all languages of the world.",
         desc2: "Each link leads to a VK post with lyrics, translation and audio.",
         desc3: "Listen. Feel. Our shared light is born.",
-        btnRadio: "📻 Radio",
-        btnVk: "🎵 VK",
-        btnYt: "▶️ YouTube",
-        btnTg: "✈️ Telegram",
+        btnRadio: "📻 Radio", btnVk: "🎵 VK", btnYt: "▶️ YouTube", btnTg: "✈️ Telegram",
         searchPlaceholder: "Search by language...",
         pinTitle: "📌 Our Pinterest",
         footer: "© Alexey Ronzhin. «Song of the World».",
-        countText: (n) => `In the book: ${n} languages`
+        countText: (n) => `In the book: ${n} languages`,
+        
+        // Для Изумрудной книги
+        emeraldTitle: "THE EMERALD BOOK",
+        emeraldSubtitle: "Instrumental albums of «Music of the World»",
+        emeraldOpen: "Open in full size →"
     }
 };
 
 let currentLang = localStorage.getItem('siteLang') || 'ru';
 
-// ===== ПОЛУЧЕНИЕ ИМЕНИ ЯЗЫКА =====
-function getLangName(lang) {
-    if (currentLang === 'ru') return lang.name;
-    return lang.nameEn || lang.name; // Если nameEn нет, покажет русское название
-}
-
-// ===== АВТОСОРТИРОВКА =====
-languages.sort((a, b) => getLangName(a).localeCompare(getLangName(b), currentLang === 'ru' ? 'ru' : 'en'));
-
-// ===== ПЕРЕКЛЮЧЕНИЕ ЯЗЫКА =====
+// ===== ОБЩАЯ ФУНКЦИЯ ПЕРЕКЛЮЧЕНИЯ ЯЗЫКА =====
 function switchLanguage(langCode) {
     currentLang = langCode;
     localStorage.setItem('siteLang', langCode);
-    
     const t = translations[langCode];
     
+    // 1. Меняем заголовки Золотой книги
     document.querySelector('h1').textContent = t.title;
     document.querySelector('.subtitle').textContent = t.subtitle;
-    
     const desc = document.querySelector('.description');
-    if (desc) {
-        desc.innerHTML = t.desc1 + '<br>' + t.desc2 + '<br>' + t.desc3;
-    }
-
+    if (desc) desc.innerHTML = t.desc1 + '<br>' + t.desc2 + '<br>' + t.desc3;
+    
     const links = document.querySelectorAll('.links a');
     if (links.length >= 4) {
-        links[0].textContent = t.btnRadio;
-        links[1].textContent = t.btnVk;
-        links[2].textContent = t.btnYt;
-        links[3].textContent = t.btnTg;
+        links[0].textContent = t.btnRadio; links[1].textContent = t.btnVk;
+        links[2].textContent = t.btnYt; links[3].textContent = t.btnTg;
     }
-
+    
     document.getElementById('search').placeholder = t.searchPlaceholder;
     
-    const pinHeader = document.querySelector('.pinterest-widget h2');
-    if (pinHeader) pinHeader.textContent = t.pinTitle;
+    // 2. Меняем тексты в блоке Изумрудной книги
+    const emeraldTitle = document.getElementById('emerald-title');
+    const emeraldSubtitle = document.getElementById('emerald-subtitle');
+    const emeraldBtn = document.getElementById('emerald-btn');
+    if (emeraldTitle) emeraldTitle.textContent = t.emeraldTitle;
+    if (emeraldSubtitle) emeraldSubtitle.textContent = t.emeraldSubtitle;
+    if (emeraldBtn) {
+        emeraldBtn.textContent = t.emeraldOpen;
+        emeraldBtn.href = `/emerald-book/?lang=${langCode}`; // Передаем язык в ссылку
+    }
     
-    const footerP = document.querySelector('footer p');
-    if (footerP) footerP.innerHTML = t.footer;
-    
-    const btnRu = document.getElementById('btn-ru');
-    const btnEn = document.getElementById('btn-en');
-    if (btnRu) btnRu.style.opacity = langCode === 'ru' ? '1' : '0.4';
-    if (btnEn) btnEn.style.opacity = langCode === 'en' ? '1' : '0.4';
-    
-    languages.sort((a, b) => getLangName(a).localeCompare(getLangName(b), langCode === 'ru' ? 'ru' : 'en'));
+    // 3. Отрисовываем списки
     renderLanguages(document.getElementById('search').value);
+    renderAlbums(document.getElementById('search').value);
 }
 
+// ===== ОТРИСОВКА ЯЗЫКОВ =====
 function renderLanguages(filter = "") {
     const list = document.getElementById("lang-list");
     if (!list) return;
-    
     list.innerHTML = "";
     const lowerFilter = filter.toLowerCase();
     
     languages
-        .filter(lang => getLangName(lang).toLowerCase().includes(lowerFilter))
+        .filter(lang => (currentLang === 'ru' ? lang.name : lang.nameEn || lang.name).toLowerCase().includes(lowerFilter))
         .forEach(lang => {
             const li = document.createElement("li");
             const a = document.createElement("a");
             a.href = lang.url;
             a.target = "_blank";
-            a.textContent = getLangName(lang);
+            a.textContent = currentLang === 'ru' ? lang.name : (lang.nameEn || lang.name);
             li.appendChild(a);
             list.appendChild(li);
         });
 
     const counter = document.getElementById("lang-count");
-    if (counter) {
-        counter.textContent = translations[currentLang].countText(languages.length);
-    }
+    if (counter) counter.textContent = translations[currentLang].countText(languages.length);
+}
+
+// ===== ОТРИСОВКА АЛЬБОМОВ =====
+function renderAlbums(filter = "") {
+    const list = document.getElementById("album-list");
+    if (!list) return;
+    list.innerHTML = "";
+    const lowerFilter = filter.toLowerCase();
+    
+    albums
+        .filter(album => (currentLang === 'ru' ? album.name : album.nameEn || album.name).toLowerCase().includes(lowerFilter))
+        .forEach(album => {
+            const li = document.createElement("li");
+            li.className = "album-item";
+            
+            const cardLink = document.createElement("a");
+            cardLink.href = album.playerUrl;
+            cardLink.target = "_blank";
+            cardLink.className = "album-link";
+            
+            const img = document.createElement("img");
+            img.src = album.cover;
+            img.alt = currentLang === 'ru' ? album.name : album.nameEn;
+            img.className = "album-cover";
+            
+            const title = document.createElement("h3");
+            title.className = "album-title";
+            title.textContent = currentLang === 'ru' ? album.name : album.nameEn;
+            
+            const subtitle = document.createElement("p");
+            subtitle.className = "album-subtitle";
+            subtitle.textContent = currentLang === 'ru' ? album.albumName : album.albumNameEn;
+            
+            cardLink.appendChild(img);
+            cardLink.appendChild(title);
+            cardLink.appendChild(subtitle);
+            li.appendChild(cardLink);
+            list.appendChild(li);
+        });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
     switchLanguage(currentLang);
-
     const searchInput = document.getElementById("search");
     if (searchInput) {
         searchInput.addEventListener("input", (e) => {
             renderLanguages(e.target.value);
+            renderAlbums(e.target.value);
         });
     }
 });
 
-// ===== ЗВЁЗДЫ =====
+// ===== ЗВЁЗДЫ (без изменений) =====
 const canvas = document.getElementById('stars');
 if (canvas) {
     const ctx = canvas.getContext('2d');
-    let stars = [];
-    let width, height;
-
+    let stars = [], width, height;
     function resize() {
         width = canvas.width = window.innerWidth;
         height = canvas.height = window.innerHeight;
         stars = [];
-        const count = Math.floor(width * height / 8000);
-        for (let i = 0; i < count; i++) {
-            stars.push({
-                x: Math.random() * width,
-                y: Math.random() * height,
-                r: Math.random() * 1.5 + 0.3,
-                alpha: Math.random(),
-                speed: Math.random() * 0.02 + 0.005
-            });
+        for (let i = 0; i < Math.floor(width * height / 8000); i++) {
+            stars.push({ x: Math.random() * width, y: Math.random() * height, r: Math.random() * 1.5 + 0.3, alpha: Math.random(), speed: Math.random() * 0.02 + 0.005 });
         }
     }
-
     function draw() {
         ctx.clearRect(0, 0, width, height);
         stars.forEach(s => {
             s.alpha += s.speed;
             if (s.alpha > 1 || s.alpha < 0.1) s.speed *= -1;
-            ctx.beginPath();
-            ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(255, 255, 255, ${s.alpha})`;
-            ctx.fill();
+            ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(255, 255, 255, ${s.alpha})`; ctx.fill();
         });
         requestAnimationFrame(draw);
     }
-
-    window.addEventListener('resize', resize);
-    resize();
-    draw();
+    window.addEventListener('resize', resize); resize(); draw();
 }
