@@ -102,30 +102,28 @@ function renderAlbums(filter = "") {
             img.alt = getAlbumName(album);
             img.className = "album-cover";
             
-            // Название
+            // Название языка и страны (первая строка)
             const title = document.createElement("h3");
-            title.textContent = getAlbumName(album);
+            title.className = "album-title";
+            title.textContent = currentLang === 'ru' ? album.name : album.nameEn;
             
-            // Кнопка PLAY (ведёт на нашу страницу с плеером)
+            // Название альбома (вторая строка)
+            const subtitle = document.createElement("p");
+            subtitle.className = "album-subtitle";
+            subtitle.textContent = currentLang === 'ru' ? album.albumName : album.albumNameEn;
+            
+            // Кнопка PLAY
             const playBtn = document.createElement("a");
             playBtn.href = album.playerUrl;
             playBtn.target = "_blank";
             playBtn.textContent = "▶ PLAY";
             playBtn.className = "play-btn";
             
+            // Собираем всё вместе
             li.appendChild(img);
             li.appendChild(title);
+            li.appendChild(subtitle);
             li.appendChild(playBtn);
-            
-            // Если есть ссылка на ВК, добавляем кнопку
-            if (album.vkUrl) {
-                const vkBtn = document.createElement("a");
-                vkBtn.href = album.vkUrl;
-                vkBtn.target = "_blank";
-                vkBtn.textContent = "🎵 VK";
-                vkBtn.className = "vk-btn";
-                li.appendChild(vkBtn);
-            }
             
             list.appendChild(li);
         });
