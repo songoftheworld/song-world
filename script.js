@@ -182,10 +182,8 @@ const languages = [
 // ===== СПИСОК АЛЬБОМОВ (ИЗУМРУДНАЯ КНИГА) =====
 const albums = [
     { 
-        name: "Гусии (Кения)", 
-        albumName: "Поцелуй дождя", 
-        nameEn: "Gusii (Kenya)", 
-        albumNameEn: "Kisii Rain",
+        name: "Гусии (Кения)", albumName: "Поцелуй дождя", 
+        nameEn: "Gusii (Kenya)", albumNameEn: "Kisii Rain",
         cover: "https://music.song-world.ru/Kisii_Rain_album.jpg", 
         playerUrl: "https://music.song-world.ru/kisii_rain.html"
     }
@@ -240,7 +238,6 @@ function switchLanguage(langCode) {
     localStorage.setItem('siteLang', langCode);
     const t = translations[langCode];
     
-    // Золотая книга
     document.querySelector('header h1').textContent = t.title;
     document.querySelector('header .subtitle').textContent = t.subtitle;
     const desc = document.querySelector('.description');
@@ -253,6 +250,7 @@ function switchLanguage(langCode) {
     }
     
     document.getElementById('search').placeholder = t.searchPlaceholder;
+    
     const pinTitle = document.getElementById('pinterest-title');
     if (pinTitle) pinTitle.textContent = t.pinterestTitle;
     
@@ -262,8 +260,8 @@ function switchLanguage(langCode) {
     // Изумрудная книга
     const emeraldTitle = document.getElementById('emerald-title');
     const emeraldSubtitle = document.getElementById('emerald-subtitle');
-    const emeraldBtn = document.getElementById('emerald-btn');
     const emeraldDesc = document.getElementById('emerald-description');
+    const emeraldBtn = document.getElementById('emerald-btn');
     
     if (emeraldTitle) emeraldTitle.textContent = t.emeraldTitle;
     if (emeraldSubtitle) emeraldSubtitle.textContent = t.emeraldSubtitle;
@@ -276,7 +274,6 @@ function switchLanguage(langCode) {
     renderLanguages(document.getElementById('search').value);
     renderAlbums(document.getElementById('search').value);
     
-    // Подсветка кнопок RU/EN (верхних и нижних)
     const btnRu = document.getElementById('btn-ru');
     const btnEn = document.getElementById('btn-en');
     if (btnRu) btnRu.style.opacity = langCode === 'ru' ? '1' : '0.4';
