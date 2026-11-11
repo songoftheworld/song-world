@@ -179,7 +179,7 @@ const languages = [
     { name: "Японский язык", nameEn: "Japanese", url: "https://vk.cc/cZQHel" }
 ];
 
-// ===== СПИСОК АЛЬБОМОВ (ИЗУМРУДНАЯ КНИГА) =====
+// ===== СПИСОК АЛЬБОМОВ =====
 const albums = [
     { 
         name: "Гусии (Кения)", albumName: "Поцелуй дождя", 
@@ -189,7 +189,6 @@ const albums = [
     }
 ];
 
-// ===== ПЕРЕВОДЫ ИНТЕРФЕЙСА =====
 const translations = {
     ru: {
         title: "ЗОЛОТАЯ КНИГА",
@@ -257,7 +256,7 @@ function switchLanguage(langCode) {
     const footerP = document.querySelector('footer p');
     if (footerP) footerP.textContent = t.footer;
     
-    // Изумрудная книга
+    // Изумрудная книга: заголовки
     const emeraldTitle = document.getElementById('emerald-title');
     const emeraldSubtitle = document.getElementById('emerald-subtitle');
     const emeraldDesc = document.getElementById('emerald-description');
@@ -270,6 +269,16 @@ function switchLanguage(langCode) {
         emeraldBtn.textContent = t.emeraldOpen;
         emeraldBtn.href = `https://songoftheworld.github.io/song-world/emerald-book/?lang=${langCode}`;
     }
+    
+    // Изумрудная книга: кнопки соцсетей
+    const emRadio = document.getElementById('em-radio');
+    const emVk = document.getElementById('em-vk');
+    const emYt = document.getElementById('em-yt');
+    const emTg = document.getElementById('em-tg');
+    if (emRadio) emRadio.textContent = t.btnRadio;
+    if (emVk) emVk.textContent = t.btnVk;
+    if (emYt) emYt.textContent = t.btnYt;
+    if (emTg) emTg.textContent = t.btnTg;
     
     renderLanguages(document.getElementById('search').value);
     renderAlbums(document.getElementById('search').value);
