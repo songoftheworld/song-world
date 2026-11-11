@@ -49,35 +49,39 @@
             <button id="btn-en-emerald" onclick="switchLanguage('en')" style="background: none; border: 1px solid #50C878; color: #50C878; padding: 5px 12px; border-radius: 5px; cursor: pointer; font-family: 'Georgia', serif; font-weight: bold;">EN</button>
         </div>
 
-        <!-- 1. Заголовок -->
         <h1 id="emerald-title" style="font-size: 3.5rem; letter-spacing: 10px; color: #50C878; text-shadow: 0 0 8px rgba(80, 200, 120, 0.7), 0 0 15px rgba(80, 200, 120, 0.4), 0 1px 2px rgba(0, 0, 0, 0.5); margin-bottom: 8px; font-weight: normal; font-family: 'Georgia', serif;">ИЗУМРУДНАЯ КНИГА</h1>
         
-        <!-- 2. Подзаголовок -->
         <p id="emerald-subtitle" class="subtitle" style="font-size: 1.3rem; color: #50C878; font-style: italic; margin-bottom: 18px; letter-spacing: 2px; text-shadow: 0 0 5px rgba(80, 200, 120, 0.3);">«Музыка Мира» — Алексей Роньжин. Инструментальный проект.</p>
         
-        <!-- 3. Счетчик -->
         <p class="lang-counter" style="color: #50C878; font-size: 1.15rem; margin-bottom: 15px; letter-spacing: 1px; text-shadow: 0 0 5px rgba(80, 200, 120, 0.4);">💎 <span id="album-count">0</span></p>
         
-        <!-- 4. ТРИ СТРОКИ ОПИСАНИЯ (ПЕРЕД КАРТОЧКОЙ, КАК ТЫ ХОТЕЛ) -->
         <p id="emerald-description" class="description" style="max-width: 750px; margin: 0 auto 22px; line-height: 1.8; color: #50C878; font-size: 1.05rem; text-shadow: 0 0 5px rgba(80, 200, 120, 0.3);">
             Музыка, которая не нуждается в переводе.<br>
             Целые альбомы, созданные для вдохновения и путешествий.<br>
             Слушай. Чувствуй. Рождается наш общий свет.
         </p>
         
-        <!-- 5. КАРТОЧКА АЛЬБОМА -->
         <ul id="album-list" class="album-grid" style="margin-bottom: 30px;"></ul>
         
-        <!-- 6. Кнопка -->
-        <div>
+        <!-- Кнопка открытия -->
+        <div style="margin-bottom: 20px;">
             <a id="emerald-btn" href="/song-world/emerald-book/" target="_blank" class="emerald-open-btn" style="display: inline-block; color: #061224; background: #50C878; text-decoration: none; padding: 12px 25px; border-radius: 25px; font-weight: bold; font-family: 'Georgia', serif; transition: 0.3s; box-shadow: 0 4px 15px rgba(80, 200, 120, 0.4);">
                 Открыть Изумрудную Книгу →
             </a>
         </div>
+
+        <!-- НОВЫЙ БЛОК: Кнопки соцсетей в стиле Изумрудной книги -->
+        <div class="emerald-links" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 10px;">
+            <a href="https://song-world.ru/public/pesnya-mira" target="_blank" style="color: #50C878; text-decoration: none; border: 1px solid rgba(80, 200, 120, 0.5); padding: 10px 22px; border-radius: 25px; transition: all 0.3s ease; font-size: 1rem; background: rgba(80, 200, 120, 0.05);">📻 Radio</a>
+            <a href="https://vk.ru/playlist_neuromusic" target="_blank" style="color: #50C878; text-decoration: none; border: 1px solid rgba(80, 200, 120, 0.5); padding: 10px 22px; border-radius: 25px; transition: all 0.3s ease; font-size: 1rem; background: rgba(80, 200, 120, 0.05);">🎵 VK</a>
+            <a href="https://www.youtube.com/@Alexey_Ronzhin" target="_blank" style="color: #50C878; text-decoration: none; border: 1px solid rgba(80, 200, 120, 0.5); padding: 10px 22px; border-radius: 25px; transition: all 0.3s ease; font-size: 1rem; background: rgba(80, 200, 120, 0.05);">▶️ YouTube</a>
+            <a href="https://t.me/world_song_project" target="_blank" style="color: #50C878; text-decoration: none; border: 1px solid rgba(80, 200, 120, 0.5); padding: 10px 22px; border-radius: 25px; transition: all 0.3s ease; font-size: 1rem; background: rgba(80, 200, 120, 0.05);">✈️ Telegram</a>
+        </div>
+
     </div>
     <!-- =================================================== -->
 
-    <!-- 7. ВИДЖЕТ PINTEREST -->
+    <!-- ВИДЖЕТ PINTEREST -->
     <div class="pinterest-widget" style="position: relative; z-index: 1;">
         <h2 id="pinterest-title">Pinterest</h2>
         <a
