@@ -330,3 +330,12 @@ footer {
         letter-spacing: 2px;
     }
 }
+
+/* Эффект наведения для кнопок соцсетей в Изумрудной книге */
+.emerald-links a:hover {
+    background: #50C878 !important;
+    color: #061224 !important;
+    border-color: #50C878 !important;
+    box-shadow: 0 0 20px rgba(80, 200, 120, 0.6) !important;
+    transform: translateY(-2px);
+}
