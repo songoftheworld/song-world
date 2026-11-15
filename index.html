@@ -53,10 +53,9 @@
         <ul id="lang-list" class="lang-grid"></ul>
     </main>
 
-    <!-- ================= ИЗУМРУДНАЯ КНИГА ================= -->
+    <!-- ================= ИЗУМРУДНАЯ КНИГА (АДАПТИРОВАННАЯ) ================= -->
     <div class="emerald-section" style="max-width: 1300px; margin: 60px auto; padding: 40px 20px; border-top: 1px solid rgba(80, 200, 120, 0.3); text-align: center; position: relative; z-index: 2;">
         
-        <!-- Нижний переключатель -->
         <div class="emerald-lang-switch" style="position: absolute; top: 20px; right: 20px; display: flex; gap: 10px;">
             <button id="btn-ru-emerald" onclick="switchLanguage('ru')" style="background: none; border: 1px solid #50C878; color: #50C878; padding: 5px 12px; border-radius: 5px; cursor: pointer; font-family: 'Georgia', serif; font-weight: bold;">RU</button>
             <button id="btn-en-emerald" onclick="switchLanguage('en')" style="background: none; border: 1px solid #50C878; color: #50C878; padding: 5px 12px; border-radius: 5px; cursor: pointer; font-family: 'Georgia', serif; font-weight: bold;">EN</button>
@@ -74,7 +73,6 @@
             Слушай. Чувствуй. Рождается наш общий свет.
         </p>
 
-        <!-- Кнопки соцсетей (с ID для перевода) -->
         <div class="emerald-links" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 30px;">
             <a id="em-radio" href="https://song-world.ru/public/pesnya-mira" target="_blank" style="color: #50C878; text-decoration: none; border: 1px solid rgba(80, 200, 120, 0.5); padding: 10px 22px; border-radius: 25px; transition: all 0.3s ease; font-size: 1rem; background: rgba(80, 200, 120, 0.05);">📻 Radio</a>
             <a id="em-vk" href="https://vk.ru/playlist_neuromusic" target="_blank" style="color: #50C878; text-decoration: none; border: 1px solid rgba(80, 200, 120, 0.5); padding: 10px 22px; border-radius: 25px; transition: all 0.3s ease; font-size: 1rem; background: rgba(80, 200, 120, 0.05);">🎵 VK</a>
@@ -82,13 +80,12 @@
             <a id="em-tg" href="https://t.me/world_song_project" target="_blank" style="color: #50C878; text-decoration: none; border: 1px solid rgba(80, 200, 120, 0.5); padding: 10px 22px; border-radius: 25px; transition: all 0.3s ease; font-size: 1rem; background: rgba(80, 200, 120, 0.05);">✈️ Telegram</a>
         </div>
         
-        <ul id="album-list" class="album-grid" style="margin-bottom: 30px;"></ul>
-        
-        <div>
-            <a id="emerald-btn" href="/song-world/emerald-book/" target="_blank" class="emerald-open-btn" style="display: inline-block; color: #061224; background: #50C878; text-decoration: none; padding: 12px 25px; border-radius: 25px; font-weight: bold; font-family: 'Georgia', serif; transition: 0.3s; box-shadow: 0 4px 15px rgba(80, 200, 120, 0.4);">
-                Открыть Изумрудную Книгу →
-            </a>
+        <!-- Поиск по альбомам (внутри Изумрудной книги) -->
+        <div class="search-box" style="text-align: center; padding: 10px; margin-bottom: 20px;">
+            <input type="text" id="emerald-search" placeholder="Поиск по альбомам..." style="width: 80%; max-width: 500px; padding: 14px 25px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(80, 200, 120, 0.4); border-radius: 30px; color: #50C878; font-size: 1.05rem; outline: none; transition: all 0.3s ease;">
         </div>
+
+        <ul id="emerald-album-list" class="album-grid" style="margin-bottom: 30px;"></ul>
     </div>
     <!-- =================================================== -->
 
