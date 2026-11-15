@@ -190,7 +190,7 @@ const albums = [
     { 
         name: "Бамбара (Мали)", albumName: "Карнавал джаза", 
         nameEn: "Bambara (Mali)", albumNameEn: "Jazz Carnival",
-        cover: "https://music.song-world.ru/Bambara_ST_1280_720.jpg",
+        cover: "https://music.song-world.ru/Bambara_01R.jpg",
         playerUrl: "https://music.song-world.ru/bambara_carnival.html"
     }
 ];
