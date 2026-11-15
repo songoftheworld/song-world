@@ -190,7 +190,7 @@ const albums = [
     { 
         name: "Бамбара (Мали)", albumName: "Карнавал джаза", 
         nameEn: "Bambara (Mali)", albumNameEn: "Jazz Carnival",
-        cover: "https://music.song-world.ru/Bambara_ST_1280_720.jpg", // Замени на реальную обложку, если она есть
+        cover: "https://music.song-world.ru/Bambara_ST_1280_720.jpg",
         playerUrl: "https://music.song-world.ru/bambara_carnival.html"
     }
 ];
@@ -348,4 +348,64 @@ function renderAlbums(filter = "") {
             
             const subtitle = document.createElement("p");
             subtitle.className = "album-subtitle";
-            subtitle.textContent = currentLang === 'ru' ?
+            subtitle.textContent = currentLang === 'ru' ? album.albumName : album.albumNameEn;
+            
+            const playText = document.createElement("div");
+            playText.className = "play-text";
+            playText.textContent = "▶ PLAY";
+            
+            cardLink.appendChild(img);
+            cardLink.appendChild(title);
+            cardLink.appendChild(subtitle);
+            cardLink.appendChild(playText);
+            li.appendChild(cardLink);
+            list.appendChild(li);
+        });
+        
+    const albumCounter = document.getElementById("album-count");
+    if (albumCounter) {
+        albumCounter.textContent = currentLang === 'ru' ? `Альбомов: ${albums.length}` : `Albums: ${albums.length}`;
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    switchLanguage(currentLang);
+    const searchInput = document.getElementById("search");
+    if (searchInput) {
+        searchInput.addEventListener("input", (e) => {
+            renderLanguages(e.target.value);
+        });
+    }
+    const emeraldSearchInput = document.getElementById("emerald-search");
+    if (emeraldSearchInput) {
+        emeraldSearchInput.addEventListener("input", (e) => {
+            renderAlbums(e.target.value);
+        });
+    }
+});
+
+// ===== ЗВЁЗДЫ =====
+const canvas = document.getElementById('stars');
+if (canvas) {
+    const ctx = canvas.getContext('2d');
+    let stars = [], width, height;
+    function resize() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+        stars = [];
+        for (let i = 0; i < Math.floor(width * height / 8000); i++) {
+            stars.push({ x: Math.random() * width, y: Math.random() * height, r: Math.random() * 1.5 + 0.3, alpha: Math.random(), speed: Math.random() * 0.02 + 0.005 });
+        }
+    }
+    function draw() {
+        ctx.clearRect(0, 0, width, height);
+        stars.forEach(s => {
+            s.alpha += s.speed;
+            if (s.alpha > 1 || s.alpha < 0.1) s.speed *= -1;
+            ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(255, 255, 255, ${s.alpha})`; ctx.fill();
+        });
+        requestAnimationFrame(draw);
+    }
+    window.addEventListener('resize', resize); resize(); draw();
+}
