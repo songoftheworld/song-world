@@ -304,7 +304,14 @@ function renderLanguages(filter = "") {
     list.innerHTML = "";
     const lowerFilter = filter.toLowerCase();
     
-    languages
+    // === СОРТИРОВКА ПО АЛФАВИТУ ===
+    const sortedLanguages = [...languages].sort((a, b) => {
+        const nameA = (currentLang === 'ru' ? a.name : a.nameEn || a.name).toLowerCase();
+        const nameB = (currentLang === 'ru' ? b.name : b.nameEn || b.name).toLowerCase();
+        return nameA.localeCompare(nameB, 'ru');
+    });
+    
+    sortedLanguages
         .filter(lang => (currentLang === 'ru' ? lang.name : lang.nameEn || lang.name).toLowerCase().includes(lowerFilter))
         .forEach(lang => {
             const li = document.createElement("li");
