@@ -333,7 +333,14 @@ function renderAlbums(filter = "") {
     list.innerHTML = "";
     const lowerFilter = filter.toLowerCase();
     
-    albums
+    // === СОРТИРОВКА ПО АЛФАВИТУ ===
+    const sortedAlbums = [...albums].sort((a, b) => {
+        const nameA = (currentLang === 'ru' ? a.name : a.nameEn || a.name).toLowerCase();
+        const nameB = (currentLang === 'ru' ? b.name : b.nameEn || b.name).toLowerCase();
+        return nameA.localeCompare(nameB, 'ru');
+    });
+    
+    sortedAlbums
         .filter(album => (currentLang === 'ru' ? album.name : album.nameEn || album.name).toLowerCase().includes(lowerFilter))
         .forEach(album => {
             const li = document.createElement("li");
