@@ -194,8 +194,8 @@ const albums = [
         playerUrl: "https://music.song-world.ru/bambara_carnival.html"
     },
     { 
-        name: "Дзонг-кэ язык (Бутан)", albumName: "Dzongkha Pulse: Himalayan Heartbeat", 
-        nameEn: "Dzongkha (Bhutan)", albumNameEn: "Dzongkha Pulse: Himalayan Heartbeat",
+        name: "Дзонг-кэ (Бутан)", albumName: "Сердцебиение Гималаев", 
+        nameEn: "Dzongkha (Bhutan)", albumNameEn: "Himalayan Heartbeat",
         cover: "https://music.song-world.ru/Dzong_TR.jpg", 
         playerUrl: "https://music.song-world.ru/dzongkha_pulse.html"
     }
