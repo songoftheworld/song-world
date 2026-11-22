@@ -196,7 +196,7 @@ const albums = [
     { 
         name: "Дзонг-кэ язык (Бутан)", albumName: "Dzongkha Pulse: Himalayan Heartbeat", 
         nameEn: "Dzongkha (Bhutan)", albumNameEn: "Dzongkha Pulse: Himalayan Heartbeat",
-        cover: "https://music.song-world.ru/dzongkha_bg.jpg", 
+        cover: "https://music.song-world.ru/Dzong_TR.jpg", 
         playerUrl: "https://music.song-world.ru/dzongkha_pulse.html"
     }
 ];
