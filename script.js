@@ -192,6 +192,12 @@ const albums = [
         nameEn: "Bambara (Mali)", albumNameEn: "Jazz Carnival",
         cover: "https://music.song-world.ru/Bambara_01R.jpg",
         playerUrl: "https://music.song-world.ru/bambara_carnival.html"
+    },
+    { 
+        name: "Дзонг-кэ язык (Бутан)", albumName: "Dzongkha Pulse: Himalayan Heartbeat", 
+        nameEn: "Dzongkha (Bhutan)", albumNameEn: "Dzongkha Pulse: Himalayan Heartbeat",
+        cover: "https://music.song-world.ru/dzongkha_bg.jpg", 
+        playerUrl: "https://music.song-world.ru/dzongkha_pulse.html"
     }
 ];
 
